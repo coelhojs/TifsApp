@@ -5,12 +5,15 @@ export const api = create({
     //baseURL: "http://localhost:3004"
     //
     //Banco de dados local TIS:
-    baseURL: "https://localhost:3001",
+    baseURL: "http://localhost:3001",
     headers: {
-        // 'access-control-allow-headers': true,
-        // 'Access-Control-Allow-Origin': 'Content-Type'
-        "Accept":"application/json",
-        "Content-Type":"application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+        // "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+        // 'Access-Control-Allow-Headers': true,
+        // 'Access-Control-Allow-Origin': 'Content-Type',
+        "Accept": "application/json",
+        "Content-Type": "application/json",
     }
 
     //Banco de dados online TIS:

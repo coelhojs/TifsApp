@@ -5,12 +5,18 @@ import { CREATE_CLIENTE, DELETE_CLIENTE, EDIT_CLIENTE, FETCH_ALL_CLIENTES, FETCH
 export const createCliente = formValues => async (dispatch, getState) => {
     const response = await api.post('/Clientes', { ...formValues });
     dispatch({ type: CREATE_CLIENTE, payload: response });
+    if (response.status == 500) {
+        return alert(response.data.errmsg);
+    }
+    console.log(response);
+
     history.push('/Home');
 };
 
 export const fetchClientes = () => async dispatch => {
     const response = await api.get('/Clientes');
     dispatch({ type: FETCH_ALL_CLIENTES, payload: response });
+    console.log(response);
 };
 
 export const fetchCliente = id => async dispatch => {
@@ -36,9 +42,9 @@ export const deleteCliente = id => async dispatch => {
 };
 
 /*console.log("Testes endpoint /Cliente");
-console.log("getAll:"); 
+console.log("getAll:");
 let getAllTest = api.get("/Clientes").then(response => response.data).then(console.log);
-console.log("postTeste:"); 
+console.log("postTeste:");
 let postTeste = api.post("/Clientes", {"nome": "Morgana",
                                         "cpf": "95559158033",
                                         "telefone": "812850298",
@@ -47,7 +53,7 @@ let postTeste = api.post("/Clientes", {"nome": "Morgana",
                                         "sexo": "feminino",
                                         "__v": 0}).then(console.log);
 
-console.log("putTeste:"); 
+console.log("putTeste:");
 let putTeste = api.put("/Clientes", {"id": postTeste.id,
                                         "nome": "Morgana",
                                         "cpf": "95559158033",
@@ -55,13 +61,13 @@ let putTeste = api.put("/Clientes", {"id": postTeste.id,
                                         "nascimento": "1985-10-13T00:36:36.002Z",
                                         "alergias": false,
                                         "sexo": "feminino",
-                                        "__v": 0}).then(console.log);  
+                                        "__v": 0}).then(console.log);
 
-console.log("getAll:"); 
-getAllTest = api.get("/Clientes").then(response => response.data).then(console.log);   
+console.log("getAll:");
+getAllTest = api.get("/Clientes").then(response => response.data).then(console.log);
 
 console.log("getIdTeste");
-let getIdTeste = api.get("/Clientes/"+postTeste.id).then(response => response.data).then(console.log);  
+let getIdTeste = api.get("/Clientes/"+postTeste.id).then(response => response.data).then(console.log);
 
 console.log("delTeste");
 let delTeste = api.delete("/Clientes/"+postTeste.id).then(response => response.data).then(console.log);*/
