@@ -1,0 +1,311 @@
+{
+  "Clientes": [
+    {
+      "id": 1,
+      "nome": "Maria do Nascimento",
+      "cpf": "14574869581",
+      "autorizaFotos": true,
+      "dataNascimento": "2019-03-25T11:25:03.98",
+      "telefone": "993847182",
+      "email": "maria.nasc@gmail.com",
+      "alergias": false,
+      "Gestante": false
+    },
+    {
+      "id": 2,
+      "nome": "Henrique G. Castro",
+      "cpf": "83740591837",
+      "autorizaFotos": true,
+      "dataNascimento": "2019-08-14T13:12:03.98",
+      "telefone": "998841113",
+      "email": "hgcastro@gmail.com",
+      "alergias": false,
+      "Gestante": false
+    },
+    {
+      "id": 3,
+      "nome": "Ana V. Rodrigues",
+      "cpf": "91837485799",
+      "autorizaFotos": true,
+      "dataNascimento": "2019-02-17T23:33:01.98",
+      "telefone": "997487619",
+      "email": "anarodr@yahoo.com.br",
+      "alergias": false,
+      "Gestante": false
+    },
+    {
+      "id": 4,
+      "nome": "Isabela do Carmo",
+      "cpf": "837163849183",
+      "autorizaFotos": true,
+      "dataNascimento": "2019-02-17T23:33:01.98",
+      "telefone": "998371849",
+      "email": "isa.carmo@yahoo.com.br",
+      "alergias": false,
+      "Gestante": false
+    },
+    {
+      "id": 5,
+      "nome": "Bruna Miorini",
+      "cpf": "847586711244",
+      "autorizaFotos": true,
+      "dataNascimento": "2019-01-17T23:13:09.98",
+      "telefone": "996779183",
+      "email": "brunamiorini@uol.com.br",
+      "alergias": false,
+      "Gestante": false
+    },
+    {
+      "nome": "Cláudia Soares",
+      "sexo": "Feminino",
+      "dataNascimento": "1980-02-18",
+      "email": "claudia@hotmail.com",
+      "alergias": "true",
+      "gestante": "true",
+      "id": 8
+    },
+    {
+      "nome": "Alessandra Alves",
+      "sexo": "Feminino",
+      "dataNascimento": "1970-02-21",
+      "email": "ale@gmail.com",
+      "alergias": "false",
+      "gestante": "false",
+      "id": 9
+    },
+    {
+      "nome": "Laura Aguiar",
+      "dataNascimento": "1993-08-20",
+      "email": "laura@pucminas.br",
+      "alergias": "true",
+      "gestante": "false",
+      "id": 10
+    }
+  ],
+  "Produtos": [
+    {
+      "id": 1,
+      "categoria": "shampoo",
+      "marca": "Loreal",
+      "linha": "Kids",
+      "descricao": "Shampoo sem sal, ph, etc",
+      "conteudo": "1000",
+      "medida": "ml"
+    },
+    {
+      "id": 2,
+      "categoria": "coloração",
+      "marca": "Koleston",
+      "linha": "Creme",
+      "descricao": "Cor Preto 20",
+      "conteudo": "-",
+      "medida": "Kit"
+    }
+  ],
+  "Servicos": [
+    {
+      "data": "2019-03-25T11:25:03.98",
+      "nome": "Selagem",
+      "cliente": "Maria do Nascimento",
+      "anotacoes": "Cabelo ressecado",
+      "materiais": [
+        {
+          "material": "Tinta",
+          "quantidade": "asdf",
+          "medida": "ml"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "data": "2019-03-25T11:25:03.98",
+      "cliente": "Angela Erica",
+      "nome": "Corte",
+      "anotacoes": "Cliente gestante",
+      "materiais": [
+        {
+          "quantidade": "a",
+          "nome": "po",
+          "medida": "L"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "data": "2019-03-25T11:25:03.98",
+      "cliente": "Lorraine Campos",
+      "materiais": [
+        {
+          "nome": "1",
+          "quantidade": "1",
+          "medida": "ml"
+        },
+        {
+          "nome": "2",
+          "quantidade": "2",
+          "medida": "L"
+        },
+        {
+          "nome": "3",
+          "quantidade": "3",
+          "medida": "mg"
+        }
+      ],
+      "anotacoes": "Ok",
+      "id": 3,
+      "nome": "Coloração"
+    },
+    {
+      "data": "2019-03-25T11:25:03.98",
+      "cliente": "Henrique G. Castro",
+      "anotacoes": "v",
+      "nome": "Coloração",
+      "materiais": [
+        {
+          "nome": "abbb",
+          "quantidade": "bbba",
+          "medida": "g"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "data": "2019-03-25T11:25:03.98",
+      "cliente": "Isabela do Carmo",
+      "nome": "Coloração",
+      "materiais": [
+        {
+          "nome": "Tinta Biocolor",
+          "quantidade": "10",
+          "medida": "ml"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "data": "2019-05-30",
+      "cliente": "Ana V. Rodrigues",
+      "anotacoes": "Cliente tal",
+      "nome": "Selagem",
+      "materiais": [
+        {
+          "nome": "Tinta",
+          "quantidade": "500",
+          "medida": "ml"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "data": "2019-05-30",
+      "materiais": [
+        {
+          "medida": "mg",
+          "nome": "teste",
+          "quantidade": "teste"
+        }
+      ],
+      "cliente": "Henrique G. Castro",
+      "anotacoes": "Teste",
+      "id": 7
+    },
+    {
+      "data": "2019-05-30",
+      "cliente": "Ana V. Rodrigues",
+      "anotacoes": "asfdçjlksafdçlkjasdfçljk",
+      "nome": "Corte",
+      "materiais": [
+        {
+          "nome": "sfdajlsadfljksfdljk",
+          "quantidade": "fasdljkfdsalkj",
+          "medida": "ml"
+        },
+        {
+          "nome": "sfdakljçsadfkjlçsafdçjkl",
+          "quantidade": "wafdsçlkjdfsaçlkjasfdçlkj",
+          "medida": "g"
+        }
+      ],
+      "id": 8
+    },
+    {
+      "data": "2019-05-30",
+      "cliente": "Alessandra Alves",
+      "anotacoes": "Alessandra possui coloração que quebrou os fios. Fiz um tratamento de restauração antes do corte.",
+      "nome": "Corte",
+      "materiais": [
+        {
+          "nome": "Hidratante Bela",
+          "quantidade": "700",
+          "medida": "ml"
+        }
+      ],
+      "id": 9
+    },
+    {
+      "data": "2019-05-30",
+      "cliente": "Laura Aguiar",
+      "anotacoes": "corte joaozinho",
+      "nome": "Corte",
+      "materiais": [
+        {
+          "nome": "Shampoo",
+          "quantidade": "10",
+          "medida": "ml"
+        },
+        {
+          "nome": "Condicionador",
+          "quantidade": "10",
+          "medida": "ml"
+        }
+      ],
+      "id": 10
+    }
+  ],
+  "Cabeleireiros": [
+    {
+      "id": 1,
+      "nome": "Joana",
+      "sobrenome": "Nascimento",
+      "cnpj": "14574869581",
+      "telefone": "993847182",
+      "email": "joa.nasc@gmail.com",
+      "dataNascimento": "2019-03-25T11:25:03.98",
+      "senha": "122",
+      "repetirSenha": "221"
+    },
+    {
+      "id": 2,
+      "nome": "Cristiano Coelho",
+      "sobrenome": "Souza",
+      "cnpj": "14574869581",
+      "telefone": "5531985877928",
+      "email": "ccoelho.me@gmail.com",
+      "dataNascimento": "2010-10-10",
+      "senha": "1",
+      "repetirSenha": "1"
+    },
+    {
+      "nome": "Ana Julia",
+      "cnpj": "22334400010909",
+      "telefone": "3198543216",
+      "email": "anajulia@gmail.com",
+      "dataNascimento": "1990-10-10",
+      "senha": "anajulia",
+      "id": 3
+    },
+    {
+      "nome": "1",
+      "id": 4
+    },
+    {
+      "nome": "Harry Potter",
+      "cnpj": "32342344324",
+      "telefone": "4324324343",
+      "email": "harry@hogwarts.com",
+      "dataNascimento": "2018-03-17",
+      "senha": "123456",
+      "id": 5
+    }
+  ]
+}
