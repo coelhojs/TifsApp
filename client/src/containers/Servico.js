@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ServicoForm from "../forms/servicoForm";
+import ServicoForm from "../components/servico/servicoForm";
 
 class Servico extends Component {
     render() {

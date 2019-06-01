@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import { editCabeleireiro, fetchCabeleireiro } from '../actions/cabeleireiro';
-import InputField from "../components/inputField";
-import '../style/general.scss';
+import { editCabeleireiro, fetchCabeleireiro } from '../../actions/cabeleireiro';
 
 let history = require("history").createBrowserHistory;
 

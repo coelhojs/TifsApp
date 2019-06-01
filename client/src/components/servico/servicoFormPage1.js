@@ -1,8 +1,5 @@
 import React from 'react';
-import { createServico, fetchServicos } from '../actions/servico';
 import { Field, reduxForm } from 'redux-form';
-import '../style/general.scss';
-import InputField from '../components/inputField';
 
 const ServicoFormPage1 = (props) => {
     const { handleSubmit, clientes } = props

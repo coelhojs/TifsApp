@@ -1,7 +1,6 @@
 import React from 'react';
 import { Field, FieldArray, reduxForm } from 'redux-form';
-import InputField from '../components/inputField';
-import MaterialUtilizado from "../components/materialUtilizado";
+import MaterialUtilizado from "./materialUtilizado";
 
 const ServicoFormPage2 = (props) => {
     const { handleSubmit, previousPage, servicos, fields } = props

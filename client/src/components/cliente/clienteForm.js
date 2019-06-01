@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import { createCliente } from '../actions/cliente';
-import InputField from "../components/inputField";
-import '../style/general.scss';
+import { createCliente } from '../../actions/cliente';
 
 let history = require("history").createBrowserHistory;
 

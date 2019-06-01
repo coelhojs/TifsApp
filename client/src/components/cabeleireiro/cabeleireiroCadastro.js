@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import { createCabeleireiro } from '../actions/cabeleireiro';
-import '../style/general.scss';
+import { createCabeleireiro } from '../../actions/cabeleireiro';
 
-const validador = require('../validate/validate');
-let history = require("history").createBrowserHistory;
+// const validador = require('../validate/validate');
+// let history = require("history").createBrowserHistory;
 
 class CabeleireiroCadastro extends Component {
 

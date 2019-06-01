@@ -1,0 +1,19 @@
+{
+  "name": "tifsapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coelhojs/TifsApp.git"
+  },
+  "author": "Cristiano Coelho e Lucas Laborne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coelhojs/TifsApp/issues"
+  },
+  "homepage": "https://github.com/coelhojs/TifsApp#readme"
+}

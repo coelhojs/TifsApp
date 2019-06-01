@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import { createProduto } from '../actions/produto';
-import InputField from "../components/inputField";
-import '../style/general.scss';
+import { createProduto } from '../../actions/produto';
 
 let history = require("history").createBrowserHistory;
 

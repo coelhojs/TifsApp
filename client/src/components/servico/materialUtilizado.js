@@ -1,6 +1,6 @@
 import React from "react";
 import { Field } from 'redux-form';
-import InputField from './inputField';
+// import InputField from '../inputField';
 
 const MaterialUtilizado = ({ fields }) => {
     return (
@@ -18,7 +18,7 @@ const MaterialUtilizado = ({ fields }) => {
 
             {fields.map((produto, index) => (
                 <div className="row" key={index}>
-                    <InputField
+                    <Field
                         name={`materiais[${index}].nome`} type="text"
                         label="Produto" inputClasses="form-control"
                         formGroupClasses="col-4 text-center" value={produto} />

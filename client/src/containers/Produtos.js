@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ProdutoForm from "../forms/produtoForm";
-import ListaProdutos from '../components/listaProdutos';
+import ListaProdutos from '../components/produto/listaProdutos';
+import ProdutoForm from "../components/produto/produtoForm";
 
 class Produtos extends Component {
     render() {

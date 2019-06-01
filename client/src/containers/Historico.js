@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchServicos } from '../actions/servico';
-import ListaServicosRecentes from "../components/listaServicosRecentes";
+import ListaServicosRecentes from "../components/servico/listaServicosRecentes";
 import SearchInput from "../components/searchInput";
 
 class Historico extends Component {

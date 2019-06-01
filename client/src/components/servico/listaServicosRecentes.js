@@ -1,8 +1,8 @@
 import * as lodash from "lodash";
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { fetchServicos } from '../actions/servico';
-import CardServico from "../components/cardServico";
+import { fetchServicos } from '../../actions/servico';
+import CardServico from "./cardServico";
 
 class ListaServicosRecentes extends Component {
     componentWillMount() {

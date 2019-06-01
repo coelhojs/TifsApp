@@ -1,8 +1,6 @@
 import React from "react";
-//import moment from "moment";
 
 const ItemCliente = ({ clientes }) => {
-    //const key = (clientes.id).slice(-4);
     //const key = clientes.id;
     const nome = clientes.nome;
     const telefone = clientes.telefone;

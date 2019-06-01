@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import Divider from "./divider";
+import Divider from "../divider";
 
 const CardServico = ({ servicos }) => {
     // let date = new Date(servicos.data)

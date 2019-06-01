@@ -1,7 +1,7 @@
 import * as lodash from "lodash";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchClientes } from "../actions/cliente";
+import { fetchClientes } from "../../actions/cliente";
 import ItemCliente from "./itemCliente";
 
 class ListaClientes extends Component {

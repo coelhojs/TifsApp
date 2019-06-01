@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CabeleireiroCadastro from "../forms/cabeleireiroCadastro";
+import CabeleireiroCadastro from "../components/cabeleireiro/cabeleireiroCadastro";
 
 
 class Cadastro extends Component {
