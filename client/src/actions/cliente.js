@@ -5,9 +5,9 @@ import { CREATE_CLIENTE, DELETE_CLIENTE, EDIT_CLIENTE, FETCH_ALL_CLIENTES, FETCH
 export const createCliente = formValues => async (dispatch, getState) => {
     const response = await api.post('/Clientes', { ...formValues });
     dispatch({ type: CREATE_CLIENTE, payload: response });
-    if (response.status == 500) {
-        return alert(response.data.errmsg);
-    }
+    // if (response.status == 500) {
+    //     return alert(response.data.errmsg);
+    // }
     console.log(response);
 
     history.push('/Home');

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { formValueSelector, reduxForm } from 'redux-form';
 import { fetchClientes } from '../../actions/cliente';
 import { createServico, fetchServicos } from '../../actions/servico';
-import Divider from "../divider";
+// import Divider from "../divider";
 import ServicoFormPage1 from "./servicoFormPage1";
 import ServicoFormPage2 from "./servicoFormPage2";
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchServicos } from '../actions/servico';
 import ListaServicosRecentes from "../components/servico/listaServicosRecentes";
-import SearchInput from "../components/searchInput";
+// import SearchInput from "../components/searchInput";
 
 class Historico extends Component {
     render() {
@@ -35,6 +35,6 @@ export default connect(
 )(Historico);
 
 
-{/* <Carousel slides={this.renderServicos()} /> */ }
-{/* https://www.npmjs.com/package/react-spring-3d-carousel */ }
-{/* https://github.com/suhailsulu/react-carousel-3d */ }
+/* <Carousel slides={this.renderServicos()} /> */ 
+/* https://www.npmjs.com/package/react-spring-3d-carousel */ 
+/* https://github.com/suhailsulu/react-carousel-3d */ 

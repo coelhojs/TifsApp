@@ -1,7 +1,7 @@
 import React from 'react';
 import Divider from '../components/divider';
 import { Link } from "react-router-dom";
-import HelpButton from '../components/helpButton';
+// import HelpButton from '../components/helpButton';
 
 const Header = () => {
     return (

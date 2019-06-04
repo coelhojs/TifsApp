@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Divider from "../divider";
 
 const CardServico = ({ servicos }) => {
@@ -34,11 +34,11 @@ const CardServico = ({ servicos }) => {
                     </div>
                     <Divider />
                     <div className="body__data text-left">
-                        <img src="/img/icon/calendar-5.svg" />
+                        <img src="/img/icon/calendar-5.svg" alt="" />
                         <span>{getDate(servicos.data)}</span>
                     </div>
                     <div className="body__anotacoes text-left">
-                        <img src="/img/icon/note.svg" />
+                        <img src="/img/icon/note.svg" alt="" />
                         <span>Anotações:</span>
                         <p>{servicos.anotacoes}</p>
                     </div>
