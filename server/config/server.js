@@ -1,11 +1,8 @@
 const http = require('http');
 const app = require('../app');
 const db = require('./db');
-const cliente = require('../cliente/cliente.rotas') ;
+const cliente = require('../cliente/cliente.rotas');
 const cabelereiros = require('../cabeleireiro/cabeleireiro.rotas');
-const config = require('../config');
-const jwt = require('jsonwebtoken');
-
 
 const PORTA = process.env.PORT || 3001;
 
