@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import renderField from '../helpers/renderField';
 
 const ServicoFormPage1 = (props) => {
     const { handleSubmit, clientes } = props
@@ -10,7 +11,7 @@ const ServicoFormPage1 = (props) => {
                 <div className="form-row">
                     <label className="col-4">Data</label>
                     <div className="col-6">
-                        <Field name="data" type="date" component="input" className="form-control" />
+                        <Field name="data" type="date" component={renderField} className="form-control" />
                     </div>
                 </div>
             </div>

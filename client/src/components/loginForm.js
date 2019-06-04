@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 import { fetchCabeleireiro } from '../actions/cabeleireiro';
 import '../style/general.scss';
 // import { required, maxLength, number, minValue, email } from "../validation/validateFormularios";
-import { email, required, senha } from "../validation/validateFormularios";
+import { email, required, minLength8, maxLength15 } from "../validation/validateFormularios";
 import renderField from './helpers/renderField';
 
 let history = require("history").createBrowserHistory;
@@ -35,7 +35,7 @@ class LoginForm extends Component {
                         <div className="form-row">
                             <label className="col-2">Senha</label>
                             <div className="col-6">
-                                <Field name="senha" type="password" component={renderField} className="form-control" validate={[senha, required]} />
+                                <Field name="senha" type="password" component={renderField} className="form-control" validate={[minLength8, maxLength15, required]} />
                             </div>
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Field } from 'redux-form';
-// import InputField from '../inputField';
+import renderField from '../helpers/renderField';
 
 const MaterialUtilizado = ({ fields }) => {
     return (
@@ -29,7 +29,7 @@ const MaterialUtilizado = ({ fields }) => {
                                 name={`materiais[${index}].quantidade`}
                                 type="text"
                                 className="form-control col-7"
-                                component="input"
+                                component={renderField}
                                 value={produto}
                             />
                             <Field name={`materiais[${index}].medida`} component="select" className="form-control col-5">

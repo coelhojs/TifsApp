@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
+import renderField from '../helpers/renderField';
 import { editCabeleireiro, fetchCabeleireiro } from '../../actions/cabeleireiro';
 
 let history = require("history").createBrowserHistory;
@@ -21,21 +22,21 @@ class CabeleireiroEditar extends Component {
             <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <div className="text-center"><h1>Editar perfil</h1></div>
                 <hr />
-                <Field name="nome" label="Nome" component="input"
+                <Field name="nome" label="Nome" component={renderField}
                     type="text"/>
-                <Field name="sobrenome" label="Sobrenome" component="input"
+                <Field name="sobrenome" label="Sobrenome" component={renderField}
                     type="text"/>
-                <Field name="cnpj" label="CNPJ" component="input"
+                <Field name="cnpj" label="CNPJ" component={renderField}
                     type="number" />
-                <Field name="telefone" label="Telefone" component="input"
+                <Field name="telefone" label="Telefone" component={renderField}
                     type="tel" />
-                <Field name="email" label="E-mail" component="input"
+                <Field name="email" label="E-mail" component={renderField}
                     type="email"/>
-                <Field name="dataNascimento" label="Data de nascimento" component="input"
+                <Field name="dataNascimento" label="Data de nascimento" component={renderField}
                     type="date"/>
-                <Field name="senha" label="Senha" component="input"
+                <Field name="senha" label="Senha" component={renderField}
                     type="password"/>
-                <Field name="repetirSenha" label="Repita a Senha" component="input"
+                <Field name="repetirSenha" label="Repita a Senha" component={renderField}
                     type="password" />
                 <br />
                 <div className="button-group d-flex justify-content-around">
