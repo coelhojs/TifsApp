@@ -14,7 +14,6 @@ import Produtos from "./containers/Produtos";
 //import Relatorios from "./containers/Relatorios";
 import Servico from "./containers/Servico";
 import VisualizarHistorico from "./components/visualizarHistorico";
-import { withRouter } from 'react-router'
 
 class App extends Component {
 

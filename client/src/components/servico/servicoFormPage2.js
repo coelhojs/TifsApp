@@ -3,7 +3,8 @@ import { Field, FieldArray, reduxForm } from 'redux-form';
 import MaterialUtilizado from "./materialUtilizado";
 
 const ServicoFormPage2 = (props) => {
-    const { handleSubmit, previousPage, servicos, fields } = props
+    // const { handleSubmit, previousPage, servicos, fields } = props
+    const { handleSubmit, previousPage } = props
 
     return (
         <form onSubmit={handleSubmit}>

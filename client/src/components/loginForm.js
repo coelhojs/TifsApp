@@ -1,69 +1,48 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import InputField from "../components/inputField";
 import { fetchCabeleireiro } from '../actions/cabeleireiro';
 import '../style/general.scss';
-import { withRouter } from "react-router-dom";
+// import { required, maxLength, number, minValue, email } from "../validation/validateFormularios";
+import { email, required, senha } from "../validation/validateFormularios";
+import renderField from './helpers/renderField';
 
 let history = require("history").createBrowserHistory;
 
 class LoginForm extends Component {
-
-    constructor(props) {
-        super(props)
-        this.state = {
-            email : '',
-            senha: ''
-        };
-    }
-
-    handleInputChange = (event) => {
-        const { value, name } = event.target;
-        this.setState({
-            [name]: value
+    onSubmit(props) {
+        this.props.fetchCabeleireiro(props, () => {
+            history.push('/');
         });
     }
 
-
-    onSubmit = (event) => {
-        event.preventDefault();
-        fetch('http://localhost:3001/cabeleireiros/autenticar', {
-            method: 'POST',
-            body: JSON.stringify(this.state),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(res => {
-                if (res.status === 200) {
-                    this.props.history.push('/Home');
-                } else {
-                    const error = new Error(res.error);
-                    throw error;
-                }
-            })
-            .catch(err => {
-                console.error(err);
-                alert('Erro ao autenticar. Por favor tente novamente.');
-            });
-    }
-
     render() {
-        const { pristine, submitting } = this.props;
+        const { handleSubmit, pristine, submitting } = this.props;
 
         return (
             <div className="container">
-                <form onSubmit={this.onSubmit}>
-                    <InputField
-                        name="email" type="email" value={this.state.email}  onChange={this.handleInputChange}
-                        label="E-mail" labelClasses="col-4" inputClasses="col-8" formGroupClasses="form-row" />
-                    <InputField name="senha" type="password" value={this.state.senha} onChange={this.handleInputChange}
-                        label="Senha" labelClasses="col-4" inputClasses="col-8" formGroupClasses="form-row" />
+                <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+                    <div className="offset-md-2">
+                        <div className="form-row">
+                            <label className="col-2">E-mail</label>
+                            <div className="col-6">
+                                <Field name="email" type="email" component={renderField} className="form-control" validate={[email, required]} />
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div className="offset-md-2">
+                        <div className="form-row">
+                            <label className="col-2">Senha</label>
+                            <div className="col-6">
+                                <Field name="senha" type="password" component={renderField} className="form-control" validate={[senha, required]} />
+                            </div>
+                        </div>
+                    </div>
                     <br />
                     <div className="button-group">
                         <button className="btn btn-link">Esqueceu a senha?</button>
-                        <button type="button" className="btn btn-success shadow border-dark" disabled={pristine || submitting}>
+                        <button type="submit" className="btn btn-success shadow border-dark" disabled={pristine || submitting}>
                             Entrar
                             </button>
                     </div>

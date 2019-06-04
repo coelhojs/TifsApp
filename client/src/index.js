@@ -6,7 +6,7 @@ import { Router } from "react-router-dom";
 import { applyMiddleware, compose, createStore } from 'redux';
 import reduxThunk from 'redux-thunk';
 import App from "./App";
-import UserMenu from "./containers/UserMenu";
+// import UserMenu from "./containers/UserMenu";
 import history from './history';
 import reducers from "./reducers";
 import * as serviceWorker from "./serviceWorker";
