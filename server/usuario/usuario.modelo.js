@@ -13,4 +13,3 @@ const schema = new Schema({
 schema.plugin(muv);
 
 module.exports = mongoose.model(NOME_MODELO, schema);
-

@@ -1,8 +1,10 @@
 // Template de mensagens de resposta:
 
-module.exports = function (erro, codigo, mensagem, dados) {
-    this.erro = erro;
+function Template(erro, codigo, mensagem, dados) {
     this.mensagem = mensagem;
+    this.erro = erro;
     this.codigo = codigo;
     this.dados = dados;
-};
+}
+
+module.exports = Template;
