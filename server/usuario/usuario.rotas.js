@@ -8,8 +8,8 @@ const router = express.Router();
 router.get('/', (req, res, next) => {
     Usuario.find(req.body)
         .exec()
-        .then(result => { res.status(200).json(result); })
-        .catch(err => { res.status(500).json(err); });
+        .then(result => { res.status(200).json(new Resposta(false, 200, '', result)); })
+        .catch(err => { res.status(500).json(new Resposta(true, 500, err.message, err)); });
 });
 
 router.post('/login', (req, res, next) => {
