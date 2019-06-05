@@ -12,18 +12,17 @@ app.use(morgan('dev'));
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 
-// Rotas:
+// Pagina da API:
 app.get('/', (req, res, next) => res.status(200).redirect('/index.html'));
 
+// Rotas
 app.use('/usuarios', require('./usuario/usuario.rotas'));
-app.use('/cabeleireiros', require('./cabeleireiro/cabeleireiro.rotas'));
 app.use('/clientes', require('./cliente/cliente.rotas'));
 app.use('/produtos', require('./produto/produto.rotas'));
 app.use('/servicos', require('./serviço/serviço.rotas'));
+app.use('/cabeleireiros', require('./cabeleireiro/cabeleireiro.rotas'));
 
 // Tratamento de rotas inválidas:
-app.use((req, res, next) => {
-    res.status(404).redirect('/notfound.html');
-});
+app.use((req, res, next) => res.status(404).redirect('/notfound.html'));
 
 module.exports = app;
