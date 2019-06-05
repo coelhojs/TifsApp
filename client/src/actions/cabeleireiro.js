@@ -12,7 +12,7 @@ export const createCabeleireiro = formValues => async (dispatch, getState) => {
     const response = await api.post('/usuarios/cadastro', { ...formValues });
     dispatch({ type: CREATE_CABELEIREIRO, payload: response.data });
     console.log(response);
-    if (response.data.ok) {
+    if (!response.data.dados.erro) {
         history.push('/');
     } else {
         responseValidation(response);
