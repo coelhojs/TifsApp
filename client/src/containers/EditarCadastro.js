@@ -6,9 +6,9 @@ import CabeleireiroEditar from "../components/cabeleireiro/cabeleireiroEditar";
 
 class EditarCadastro extends Component {
     componentDidMount() {
-        //this.props.fetchCabeleireiro(this.props.match.params.id);        
-        // let id = '5cdca3cf4846a141f0c72d19';
-        // this.props.fetchCabeleireiro(id);        
+        this.props.fetchCabeleireiro(this.props.match.params.id);
+        let id = '5cdca3cf4846a141f0c72d19';
+        this.props.fetchCabeleireiro(id);
     }
     onSubmit = formValues => {
         this.props.editCabeleireiro(this.props.match.params.id, formValues);

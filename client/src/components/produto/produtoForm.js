@@ -19,19 +19,19 @@ class ProdutoForm extends Component {
             <form className="container formMobileProd" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <div className="text-center"><h1>Cadastro de Produto</h1></div>
                 <hr />
-<label htmlFor="">Categoria</label>
+<label>Categoria</label>
                 <Field name="categoria" component={renderField} className="form-control"   />
-                <label htmlFor="">Marca</label>
+                <label>Marca</label>
                 <Field name="marca" component={renderField} className="form-control"  type="text"
                     placeholder="Ex.: Loreal" 
                 />
-                <label htmlFor="">Linha</label>
+                <label>Linha</label>
                 <Field name="linha" label="Linha" component={renderField} className="form-control"  type="text"
                     placeholder="Ex.: Kids" 
                 />
-                <label htmlFor="">Descrição</label>
+                <label>Descrição</label>
                 <Field name="descricao" label="Descrição" component={renderField} className="form-control"  type="text"  />
-                <label htmlFor="">Conteúdo</label>
+                <label>Conteúdo</label>
                 <Field name="conteudo" label="Conteúdo" component={renderField} className="form-control "  type="number"
                     placeholder="500"  
                 />
