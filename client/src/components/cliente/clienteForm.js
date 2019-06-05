@@ -36,7 +36,7 @@ class ClienteForm extends Component {
 						<label>Sexo</label>
 						<Field name="sexo" className="form-control" component="select">
 							{sexo.map(sexoOption =>
-								<option value={sexoOption} key={sexoOption}>{sexoOption}</option>)}
+								<option value={sexoOption} key={sexoOption} validate={required}>{sexoOption}</option>)}
 						</Field>
 
 						<label>CPF</label>

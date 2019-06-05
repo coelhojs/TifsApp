@@ -24,10 +24,11 @@ export const api = create({
 export const responseValidation = response => {
     switch (response.status) {
         case 500:
-            alert(response.data.message);
+            alert("Houve um erro ao processar a sua requisição");
+            console.log(response.data.dados.mensagem);
             break;
         case 200:
-            alert(response.data._id);
+            alert(response.data.dados._id);
         default:
             break;
     }

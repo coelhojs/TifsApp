@@ -1,3 +1,6 @@
+import { api } from "../actions/index";
+import { FETCH_ALL_CABELEIREIROS } from '../actions/types';
+
 export const maxLength = max => value =>
     value && value.length > max ? `O tamanho máximo para este campo é ${max}` : undefined;
 export const minLength = min => value =>
@@ -14,6 +17,14 @@ export const letters = value => value && !isNaN(Number(value)) ? 'Must be a numb
 export const minValue = min => value =>
     value && value < min ? `Must be at least ${min}` : undefined;
 export const minValue18 = minValue(18);
+
+// export const unique = value => async dispatch => {
+//     console.log("12");
+//     const response = await api.get('/Cabeleireiros', { value });
+//     console.log(response);
+//     dispatch({ type: FETCH_ALL_CABELEIREIROS, payload: response.mensagem });
+// }
+
 export const email = value =>
     value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
         'Endereço de e-mail inválido' : undefined;
