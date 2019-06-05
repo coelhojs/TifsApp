@@ -9,7 +9,7 @@ const schema = new Schema({
     telefone: { type: String, unique: true },
     cnpj: { type: String, unique: true },
     dataNascimento: { type: Date },
-    token: { type: Schema.Types.ObjectId }
+    token: { type: Schema.Types.ObjectId, required: true }
 
 }, { strict: false });
 

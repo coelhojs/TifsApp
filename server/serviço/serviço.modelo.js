@@ -10,7 +10,7 @@ const schema = new Schema({
     anotacoes: { type: String },
     cliente: { type: String, required: true },
     produtos: [{ type: Schema.Types.ObjectId, Ref: "Produto" }],
-    token: { type: Schema.Types.ObjectId },
+    token: { type: Schema.Types.ObjectId, required: true },
 
 }, { Strict: false });
 
