@@ -12,5 +12,8 @@ module.exports = {
     init: function (callback) {
         mongoose.connection.once('open', callback);
         mongoose.connect(URL, { useCreateIndex: true, useNewUrlParser: true });
+    },
+    isLocal: function () {
+        return URL.indexOf('localhost') != -1;
     }
 };

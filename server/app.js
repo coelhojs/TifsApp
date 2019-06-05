@@ -2,12 +2,9 @@ const bodyparser = require('body-parser');
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
-const bodyParser = require('body-parser');
 
 const app = express();
 app.use(express.static('./public'));
-
-app.use(bodyParser.urlencoded({ extended: true }));
 
 // Middlewares:
 app.use(cors());
