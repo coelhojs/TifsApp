@@ -4,7 +4,7 @@ import { FETCH_ALL_PRODUTOS, FETCH_PRODUTO, CREATE_PRODUTO, DELETE_PRODUTO } fro
 export default function (state = {}, action) {
     switch (action.type) {
         case CREATE_PRODUTO:
-            return { ...state, [action.payload.data.id]: action.payload.data };
+            return { ...state, [action.payload.data]: action.payload.data };
         case FETCH_ALL_PRODUTOS:
             return action.payload.data;
         case FETCH_PRODUTO:

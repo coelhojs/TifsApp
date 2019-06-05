@@ -19,7 +19,7 @@ class CabeleireiroCadastro extends Component {
     return (
       <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <div className="text-center">
-          <h1>Cadastro de Cabeleireiro</h1>
+          <h1>Novo Usuário</h1>
         </div>
         <div className="row">
           <div className="offset-md-1 col-md-5">

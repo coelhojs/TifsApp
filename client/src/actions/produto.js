@@ -3,8 +3,10 @@ import history from '../history';
 import { CREATE_PRODUTO, DELETE_PRODUTO, EDIT_PRODUTO, FETCH_ALL_PRODUTOS, FETCH_PRODUTO, FETCH_PRODUTO_NAME } from './types';
 
 export const createProduto = formValues => async (dispatch, getState) => {
+    formValues.token = sessionStorage.getItem('token');
+    console.log(formValues);
     const response = await api.post('/Produtos', { ...formValues });
-    dispatch({ type: CREATE_PRODUTO, payload: response });
+    dispatch({ type: CREATE_PRODUTO, payload: response.data });
     history.push('/Produtos');
 };
 
@@ -18,7 +20,7 @@ export const fetchProduto = id => async dispatch => {
 };
 
 export const editProduto = (id, formValues) => async dispatch => {
-    
+
     const response = await api.put(`/Produtos/${id}`, formValues);
     console.log(response);
     dispatch({ type: EDIT_PRODUTO, payload: response.data });
@@ -30,7 +32,7 @@ export const editProduto = (id, formValues) => async dispatch => {
 // };
 
 export const getProdutoName = id => async dispatch => {
-    
+
     const response = await api.get(`/Produtos/${id}`);
     dispatch({ type: FETCH_PRODUTO_NAME, payload: response.data });
 };
@@ -44,9 +46,9 @@ export const deleteProdutos = id => async dispatch => {
 };
 
 /*console.log("Testes endpoint /Produtos");
-console.log("getAll:"); 
+console.log("getAll:");
 let getAllTest = api.get("/Produtos").then(response => response.data).then(console.log);
-console.log("postTeste:"); 
+console.log("postTeste:");
 let postTeste = api.post("/Produtos", {"categoria": "Testando Inclusao 3",
                                         "marca": "Teste",
                                         "linha": "bureal",
@@ -55,7 +57,7 @@ let postTeste = api.post("/Produtos", {"categoria": "Testando Inclusao 3",
                                         "medida": "10",
                                         "__v": 0}).then(console.log);
 
-console.log("putTeste:"); 
+console.log("putTeste:");
 let putTeste = api.put("/Produtos", {"": postTeste.,
                                     "categoria": "Testando Inclusao 3",
                                     "marca": "Teste",
@@ -63,13 +65,13 @@ let putTeste = api.put("/Produtos", {"": postTeste.,
                                     "descricao": "testando",
                                     "conteudo": "10ml",
                                     "medida": "10",
-                                    "__v": 0}).then(console.log);  
+                                    "__v": 0}).then(console.log);
 
-console.log("getAll:"); 
-getAllTest = api.get("/Produtos").then(response => response.data).then(console.log);   
+console.log("getAll:");
+getAllTest = api.get("/Produtos").then(response => response.data).then(console.log);
 
 console.log("getIdTeste");
-let getIdTeste = api.get("/Produtos/"+postTeste.).then(response => response.data).then(console.log);  
+let getIdTeste = api.get("/Produtos/"+postTeste.).then(response => response.data).then(console.log);
 
 console.log("delTeste");
 let delTeste = api.delete("/Produtos/"+postTeste.).then(response => response.data).then(console.log);*/

@@ -7,7 +7,7 @@ class Produtos extends Component {
         return (
             <div>
                 <ProdutoForm onSubmit={this.onSubmit} />
-                <ListaProdutos />
+                {/* <ListaProdutos /> */}
             </div>
         );
     }

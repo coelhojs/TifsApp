@@ -28,15 +28,13 @@ export const fetchAllCabeleireiros = () => async dispatch => {
 export const fetchCabeleireiro = id => async dispatch => {
     const response = await api.get(`/Cabeleireiros/${id}`);
     dispatch({ type: FETCH_CABELEIREIRO, payload: response.data.dados });
-    sessionStorage.setItem('usuario', response.data.dados._id);
-    console.log(sessionStorage.getItem('usuario'));
 };
 
 export const loginCabeleireiro = formValues => async dispatch => {
     const response = await api.post(`/usuarios/login`, formValues);
     dispatch({ type: FETCH_CABELEIREIRO, payload: response.data.dados });
-    sessionStorage.setItem('usuario', response.data.dados.token);
-    console.log(sessionStorage.getItem('usuario'));
+    sessionStorage.setItem('token', response.data.dados.token);
+    console.log(sessionStorage.getItem('token'));
 };
 
 export const editCabeleireiro = (id, formValues) => async dispatch => {
