@@ -15,7 +15,7 @@ app.use(bodyparser.urlencoded({ extended: false }));
 
 // Autenticador:
 app.use((req, res, next) => {
-    if (req.method != 'GET' && req.path != '/usuarios') {
+    if (req.method != 'GET' && !req.path.startsWith('/usuarios')) {
         if (!req.body.token) {
             let msg = 'Token não recebido.';
             console.log(msg + ' O corpo da requisição é: ');

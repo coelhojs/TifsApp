@@ -1,8 +1,10 @@
 const express = require('express');
 const Usuario = require('./usuario.modelo');
-const fake = require('../fake');
+const Cabeleireiro = require('../cabeleireiro/cabeleireiro.modelo');
 const validador = require('../validações');
 const router = express.Router();
+
+const Resposta = require('../resposta');
 
 // Metodo provisorio para listar usuarios
 router.get('/', (req, res, next) => {
@@ -36,13 +38,22 @@ router.post('/cadastro', (req, res, next) => {
     let email = req.body.email;
     let senha = req.body.senha;
 
+    delete req.body.email;
+    delete req.body.senha;
+
     // >>> Validacao opcional aqui <<<
     // let validacao = validar(email, senha);
 
     let user = new Usuario({ email: email, senha: senha });
     user.save()
-        .then(result => { res.status(200).json(result); })
-        .catch(err => { res.status(500).json(err) });
+        .then(resultUser => {
+            // Criacao do cabeleireiro
+            let cab = new Cabeleireiro(req.body);
+            cab.token = resultUser._id;
+            cab.save()
+                .then(result => { res.status(200).json(new Resposta(false, 200, '', result)); })
+                .catch(err => { res.status(500).json(new Resposta(true, 500, err.message, err)); });
+        }).catch(err => { res.status(500).json(err) });
 });
 
 module.exports = router;
