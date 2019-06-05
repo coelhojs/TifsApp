@@ -1,3 +1,4 @@
+const usuario = require('./usuario/usuario.modelo');
 const bodyparser = require('body-parser');
 const express = require('express');
 const morgan = require('morgan');
@@ -12,10 +13,20 @@ app.use(morgan('dev'));
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 
-// Pagina da API:
-app.get('/', (req, res, next) => res.status(200).redirect('/index.html'));
+// Autenticador:
+app.use((req, res, next) => {
+    if (req.method != 'GET' && req.path != '/usuarios') {
+        usuario.findOne({ _id: req.body.token })
+            .exec()
+            .then(result => { next() })
+            .catch(err => { res.status(500).json({ msg: 'Erro ao autenticar: Token invalido!' }) });
+    } else {
+        next();
+    }
+});
 
 // Rotas
+app.get('/', (req, res, next) => res.status(200).redirect('/index.html'));
 app.use('/usuarios', require('./usuario/usuario.rotas'));
 app.use('/clientes', require('./cliente/cliente.rotas'));
 app.use('/produtos', require('./produto/produto.rotas'));
