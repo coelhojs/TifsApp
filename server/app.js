@@ -16,10 +16,17 @@ app.use(bodyparser.urlencoded({ extended: false }));
 // Autenticador:
 app.use((req, res, next) => {
     if (req.method != 'GET' && req.path != '/usuarios') {
-        usuario.findOne({ _id: req.body.token })
-            .exec()
-            .then(result => { next() })
-            .catch(err => { res.status(500).json({ msg: 'Erro ao autenticar: Token invalido!' }) });
+        if (!req.token) {
+            let msg = 'Token não recebido.';
+            console.log(msg + ' O corpo da requisição é: ');
+            console.log(req.body);
+            res.status(500).json({ msg: msg });
+        } else {
+            usuario.findOne({ _id: req.body.token })
+                .exec()
+                .then(result => { console.log('Autenticado como ' + result.email); next() })
+                .catch(err => { res.status(500).json({ msg: 'Erro ao autenticar: Token invalido!' }) });
+        }
     } else {
         next();
     }
