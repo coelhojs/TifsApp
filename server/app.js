@@ -7,6 +7,8 @@ const cors = require('cors');
 const app = express();
 app.use(express.static('./public'));
 
+const Resposta = require('./resposta');
+
 // Middlewares:
 app.use(cors());
 app.use(morgan('dev'));
@@ -20,12 +22,12 @@ app.use((req, res, next) => {
             let msg = 'Token não recebido.';
             console.log(msg + ' O corpo da requisição é: ');
             console.log(req.body);
-            res.status(500).json({ msg: msg });
+            res.status(500).json(new Resposta(true, 500, msg, []));
         } else {
             usuario.findOne({ _id: req.body.token })
                 .exec()
                 .then(result => { console.log('Autenticado como ' + result.email); next() })
-                .catch(err => { res.status(500).json({ msg: 'Erro ao autenticar: Token invalido!' }) });
+                .catch(err => { res.status(500).json(new Resposta(true, 500, 'Erro ao autenticar: Token invalido! - ', err)); });
         }
     } else {
         next();
