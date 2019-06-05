@@ -11,7 +11,7 @@ const schema = new Schema({
     descricao: { type: String, required: true },
     token: { type: Schema.Types.ObjectId, required: true }
 
-}, { strict: false });
+}, { strict: true });
 
 schema.index({ categoria: 1, marca: 1, linha: 1, descricao: 1 }, { unique: true });
 

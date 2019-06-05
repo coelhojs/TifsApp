@@ -8,7 +8,7 @@ const schema = new Schema({
     email: { type: String, required: true, unique: true },
     senha: { type: String, required: true },
 
-}, { strict: false });
+}, { strict: true });
 
 schema.plugin(muv);
 

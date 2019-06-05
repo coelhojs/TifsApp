@@ -19,25 +19,6 @@ function randBool() {
 }
 
 module.exports = {
-    Cabeleireiro: function () {
-        let nome = faker.name.firstName();
-        let sobrenome = faker.name.lastName();
-        let email = faker.internet.email(nome);
-        let telefone = randomNumberSeq(9);
-        let cnpj = randomNumberSeq(14);
-        let dataNascimento = randomDate(new Date(1970, 0, 1), new Date(2003, 0, 1));
-
-        return {
-            nome: nome,
-            sobrenome: sobrenome,
-            email: email,
-            telefone: telefone,
-            cnpj: cnpj,
-            dataNascimento: dataNascimento,
-            senha: '123456',
-        };
-    },
-
     Cliente: function () {
         let nome = faker.name.firstName();
         let cpf = randomNumberSeq(11);

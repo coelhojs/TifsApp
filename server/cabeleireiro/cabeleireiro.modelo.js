@@ -11,7 +11,7 @@ const schema = new Schema({
     dataNascimento: { type: Date },
     token: { type: Schema.Types.ObjectId, required: true }
 
-}, { strict: false });
+}, { strict: true });
 
 schema.plugin(muv);
 

@@ -12,7 +12,9 @@ const schema = new Schema({
     produtos: [{ type: Schema.Types.ObjectId, Ref: "Produto" }],
     token: { type: Schema.Types.ObjectId, required: true },
 
-}, { Strict: false });
+}, { Strict: true });
+
+schema.index({ nome: 1, data: 1, anotacoes: 1, cliente: 1, produtos: 1, token: 1 }, { unique: true });
 
 schema.plugin(muv);
 

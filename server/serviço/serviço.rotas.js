@@ -2,6 +2,8 @@ const express = require('express');
 const Serviço = require('./serviço.modelo');
 const router = express.Router();
 
+const Resposta = require('../resposta');
+
 router.get('/', (req, res, next) => {
     Serviço.find(req.body)
         .exec()
