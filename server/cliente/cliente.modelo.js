@@ -11,6 +11,7 @@ const schema = new Schema({
     nascimento: { type: Date },
     alergias: { type: Boolean },
     sexo: { type: String },
+    token: { type: Schema.Types.ObjectId }
 });
 
 schema.plugin(muv);

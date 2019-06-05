@@ -6,10 +6,10 @@ const NOME_MODELO = 'Cabeleireiro';
 
 const schema = new Schema({
     nome: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
     telefone: { type: String, unique: true },
     cnpj: { type: String, unique: true },
     dataNascimento: { type: Date },
+    token: { type: Schema.Types.ObjectId }
 
 }, { strict: false });
 

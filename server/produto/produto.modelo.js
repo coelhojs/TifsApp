@@ -9,6 +9,7 @@ const schema = new Schema({
     marca: { type: String, required: true },
     linha: { type: String, required: true },
     descricao: { type: String, required: true },
+    token: { type: Schema.Types.ObjectId }
 
 }, { strict: false });
 
