@@ -25,12 +25,12 @@ router.post('/login', (req, res, next) => {
         .exec()
         .then(result => {
             if (result) {
-                res.status(200).json({ token: result._id });
+                res.status(200).json(new Resposta(false, 200, '', { token: result._id }));
             } else {
-                res.status(200).json({ msg: 'Usuario nao encontrado ou senha invalida!' });
+                res.status(200).json(new Resposta(true, 500, 'Usuario nao encontrado ou senha invalida!', []));
             }
         }).catch(err => {
-            res.status(500).json(err);
+            res.status(500).json(new Resposta(true, 500, err.message, err));
         });
 });
 

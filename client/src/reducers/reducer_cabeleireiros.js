@@ -10,7 +10,7 @@ export default function (state = {}, action) {
         case FETCH_ALL_CABELEIREIROS:
             return action.payload.data;
         case FETCH_CABELEIREIRO:
-            return { ...state, [action.payload.id]: action.payload };
+            return { ...state, [action.payload.token]: action.payload };
         case DELETE_CABELEIREIRO:
             return lodash.omit(state, action.payload.data.id);
         default:
