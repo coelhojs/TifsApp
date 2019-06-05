@@ -18,7 +18,7 @@ app.use(bodyparser.urlencoded({ extended: false }));
 // Rotas:
 app.get('/', (req, res, next) => res.status(200).redirect('/index.html'));
 
-app.use('/usuarios', require('./usuario/usuarios.rotas'));
+app.use('/usuarios', require('./usuario/usuario.rotas'));
 app.use('/cabeleireiros', require('./cabeleireiro/cabeleireiro.rotas'));
 app.use('/clientes', require('./cliente/cliente.rotas'));
 app.use('/produtos', require('./produto/produto.rotas'));

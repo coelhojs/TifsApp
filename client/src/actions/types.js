@@ -24,3 +24,6 @@ export const CREATE_SERVICO = "CREATE_SERVICO";
 export const EDIT_SERVICO = "EDIT_SERVICO";
 export const DELETE_SERVICO = "DELETE_SERVICO";
 export const FETCH_SERVICO_NAME = "FETCH_SERVICO_NAME";
+
+export const SIGN_IN = "SIGN_IN";
+export const SIGN_OUT = "SIGN_OUT";

@@ -7,7 +7,8 @@ export const required = value => value ? undefined : 'Campo obrigatório';
 //setar maxLength?
 export const minLength8 = minLength(8);
 export const maxLength15 = maxLength(15);
-export const length14 = value => value && value.length === 14 ? undefined : "O CNPJ deve ter 14 dígitos ";
+export const cnpj = value => value && value.length === 14 ? undefined : "O CNPJ deve ter 14 dígitos ";
+export const cpf = value => value && value.length === 14 ? undefined : "O CPF deve ter 11 dígitos ";
 export const number = value => value && isNaN(Number(value)) ? 'Must be a number' : undefined;
 export const letters = value => value && !isNaN(Number(value)) ? 'Must be a number' : undefined;
 export const minValue = min => value =>
@@ -17,13 +18,12 @@ export const email = value =>
     value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
         'Endereço de e-mail inválido' : undefined;
 export const tooYoung = value => {
-    console.log(value)
     let idade;
     if (value) {
         value = value.split("-");
-        if (value[0])
+        if (value[0]) {
             idade = 2019 - value[0];
-        console.log(idade);
+        }
     }
 
     if (value && idade < 18) {

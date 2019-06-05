@@ -11,9 +11,10 @@ let history = require("history").createBrowserHistory;
 
 class LoginForm extends Component {
     onSubmit(props) {
-        this.props.fetchCabeleireiro(props, () => {
-            history.push('/');
-        });
+        this.props.fetchCabeleireiro(props);
+        // this.props.fetchCabeleireiro(props, () => {
+        //     history.push('/');
+        // });
     }
 
     render() {

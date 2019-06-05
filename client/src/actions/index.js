@@ -1,4 +1,5 @@
 import { create } from "apisauce";
+import { SIGN_IN, SIGN_OUT } from './types';
 
 export const api = create({
     // //Base json-db:
@@ -19,3 +20,30 @@ export const api = create({
     //Banco de dados online TIS:
     //baseURL: "134.209.243.214:3001"
 });
+
+export const responseValidation = response => {
+    switch (response.status) {
+        case 500:
+            alert(response.data.message);
+            break;
+        case 200:
+            alert(response.data._id);
+        default:
+            break;
+    }
+
+    return response.ok;
+}
+
+export const signIn = userId => {
+    return {
+        type: SIGN_IN,
+        payload: userId
+    };
+};
+
+export const signOut = () => {
+    return {
+        type: SIGN_OUT
+    };
+};

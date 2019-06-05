@@ -1,5 +1,5 @@
 import history from '../history';
-import { api } from "./index";
+import { api, responseValidation } from "./index";
 import {
     CREATE_CABELEIREIRO,
     FETCH_CABELEIREIRO,
@@ -11,7 +11,11 @@ import {
 export const createCabeleireiro = formValues => async (dispatch, getState) => {
     const response = await api.post('/Cabeleireiros', { ...formValues });
     dispatch({ type: CREATE_CABELEIREIRO, payload: response.data });
-    history.push('/Home');
+    console.log(response);
+    if (responseValidation(response)) {
+        // 5cf73f979a7c880c4c0d9f80
+        history.push('/Home');
+    }
 };
 
 export const fetchAllCabeleireiros = () => async dispatch => {
@@ -21,9 +25,10 @@ export const fetchAllCabeleireiros = () => async dispatch => {
 };
 
 export const fetchCabeleireiro = id => async dispatch => {
-
     const response = await api.get(`/Cabeleireiros/${id}`);
     dispatch({ type: FETCH_CABELEIREIRO, payload: response.data });
+    sessionStorage.setItem('usuario', response.data._id);
+    console.log(sessionStorage.getItem('usuario'));
 };
 
 export const editCabeleireiro = (id, formValues) => async dispatch => {

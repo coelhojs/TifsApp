@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import renderField from '../helpers/renderField';
 import { editCabeleireiro, fetchCabeleireiro } from '../../actions/cabeleireiro';
-import { email, required, minLength8, maxLength15, length14, letters, number } from "../../validation/validateFormularios";
+import { email, required, minLength8, maxLength15, cnpj, letters, number } from "../../validation/validateFormularios";
 import normalizePhone from "../../validation/normalizePhone";
 
 let history = require("history").createBrowserHistory;
@@ -39,7 +39,7 @@ class CabeleireiroEditar extends Component {
             <Field className="form-control"
               name="cnpj"
               component={renderField}
-              validate={[number, length14]}
+              validate={[number, cnpj]}
               type="text"
             />
             <label>Telefone</label>
