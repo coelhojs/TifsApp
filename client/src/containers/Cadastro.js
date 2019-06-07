@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import CabeleireiroCadastro from "../components/cabeleireiro/cabeleireiroCadastro";
+import CadastroForm from "../components/usuario/cadastroForm";
 
 
 class Cadastro extends Component {
     render() {
         return (
-            <CabeleireiroCadastro onSubmit={this.onSubmit} />
+            <CadastroForm onSubmit={this.onSubmit} />
         );
     }
 }

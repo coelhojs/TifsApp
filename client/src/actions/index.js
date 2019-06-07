@@ -18,7 +18,16 @@ export const api = create({
     }
 
     //Banco de dados online TIS:
-    //baseURL: "134.209.243.214:3001"
+    // baseURL: "134.209.243.214:3001"
+    // headers: {
+    //     "Access-Control-Allow-Origin": "*",
+    //     "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+    //     "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+    //     'Access-Control-Allow-Headers': true,
+    //     'Access-Control-Allow-Origin': 'Content-Type',
+    //     "Accept": "application/json",
+    //     "Content-Type": "application/json",
+    // }
 });
 
 export const responseValidation = response => {

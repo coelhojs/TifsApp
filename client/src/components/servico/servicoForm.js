@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as lodash from "lodash";
 import { connect } from 'react-redux';
 import { formValueSelector, reduxForm } from 'redux-form';
-import { fetchClientes } from '../../actions/cliente';
+import { fetchAllClientes } from '../../actions/cliente';
 import { createServico, fetchServicos } from '../../actions/servico';
 // import Divider from "../divider";
 import ServicoFormPage1 from "./servicoFormPage1";
@@ -42,13 +42,13 @@ class ServicoForm extends Component {
     }
 
     componentWillMount() {
-        this.props.fetchClientes();
+        this.props.fetchAllClientes();
         this.props.fetchServicos();
     }
 
     renderClientes() {
         return lodash.map(this.props.clientes, clientes => {
-            return <option key={clientes.id} value={clientes.nome}>{clientes.nome}</option>;
+            return <option key={clientes._id} value={clientes.nome}>{clientes.nome}</option>;
         });
     }
 
@@ -103,7 +103,7 @@ ServicoForm = reduxForm({
 })(ServicoForm)
 
 ServicoForm = connect(
-    mapStateToProps, { fetchClientes, createServico, fetchServicos }
+    mapStateToProps, { fetchAllClientes, createServico, fetchServicos }
 )(ServicoForm)
 
 export default ServicoForm

@@ -11,7 +11,7 @@ class ListaProdutos extends Component {
 
     renderProdutos() {
         return lodash.map(this.props.produtos, produtos => {
-            return <ItemProduto key={produtos.id} produtos={produtos} />;
+            return <ItemProduto key={produtos._id} produtos={produtos} />;
         });
     }
 

@@ -10,7 +10,14 @@ export const required = value => value ? undefined : 'Campo obrigatório';
 //setar maxLength?
 export const minLength8 = minLength(8);
 export const maxLength15 = maxLength(15);
-export const cnpj = value => value && value.length === 14 ? undefined : "O CNPJ deve ter 14 dígitos ";
+export const cnpj = value => {
+    if (value && value.length === 14) {
+        return undefined;
+    }
+    else {
+        return "O CNPJ deve ter 14 dígitos ";
+    }
+}
 export const cpf = value => value && value.length === 14 ? undefined : "O CPF deve ter 11 dígitos ";
 export const number = value => value && isNaN(Number(value)) ? 'Must be a number' : undefined;
 export const letters = value => value && !isNaN(Number(value)) ? 'Must be a number' : undefined;

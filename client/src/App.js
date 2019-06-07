@@ -3,7 +3,6 @@ import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import Cadastro from "./containers/Cadastro";
 import Clientes from "./containers/Clientes";
-import Editar from "./containers/EditarCadastro";
 import Footer from "./containers/Footer";
 import Historico from "./containers/Historico";
 import Header from "./containers/Header";
@@ -29,12 +28,12 @@ class App extends Component {
                     <Route exact path="/Historico/:id" component={VisualizarHistorico} />
                     <Route path="/Produtos" component={Produtos} />
                     <Route path="/Servico" component={Servico} />
-                    <Route path="/Editar/:id" component={Editar} />
+                    {/* <Route path="/Editar/:id" component={Editar} /> */}
                     <Route path="/Cadastro" component={Cadastro} />
                     <Route path="/Login" component={Login} />
                     {/* <Route path="/Relatorios" component={Relatorios} /> */}
                 </Switch>
-                <Footer />
+                {/* <Footer /> */}
             </div >
         );
     }

@@ -4,12 +4,12 @@ import { Field, reduxForm } from 'redux-form';
 import { createCabeleireiro } from '../../actions/cabeleireiro';
 import renderField from '../helpers/renderField';
 import { email, required, minLength8, maxLength15, cnpj, letters, number, tooYoung } from "../../validation/validateFormularios";
-import normalizePhone from "../../validation/normalizePhone";
+import { normalizePhone, normalizeCNPJ } from "../../validation/normalize";
 
 // const validador = require('../validate/validate');
 // let history = require("history").createBrowserHistory;
 
-class CabeleireiroCadastro extends Component {
+class CadastroForm extends Component {
   onSubmit(props) {
     this.props.createCabeleireiro(props);
   }
@@ -34,8 +34,9 @@ class CabeleireiroCadastro extends Component {
             <Field className="form-control"
               name="cnpj"
               component={renderField}
-              validate={[number, cnpj]}
+              validate={[cnpj]}
               type="text"
+            // normalize={normalizeCNPJ}
             />
             <label>Telefone</label>
             <Field className="form-control"
@@ -77,27 +78,26 @@ class CabeleireiroCadastro extends Component {
           <div className="col-md-6 text-center">
             <img src="/img/cadastroImg.svg" alt="" style={{ marginTop: '4rem' }} />
           </div>
-          <br />
-          <div className="offset-md-1 col-md-5">
-            <div className="button-group d-flex justify-content-around">
-              <button type="button" className="btn btn-danger" disabled={pristine || submitting}
-                onClick={reset}>
-                Cancelar
-                        </button>
-              <button type="submit" className="btn btn-success" disabled={pristine || submitting}>
-                Cadastrar
-                        </button>
-            </div>
-          </div>
         </div>
         <br />
+        <div className="offset-md-1 col-md-5">
+          <div className="button-group d-flex justify-content-around">
+            <button type="button" className="btn btn-danger" disabled={pristine || submitting}
+              onClick={reset}>
+              Cancelar
+                        </button>
+            <button type="submit" className="btn btn-success" disabled={pristine || submitting}>
+              Cadastrar
+                        </button>
+          </div>
+        </div>
       </form >
     );
   }
 }
 
 export default reduxForm({
-  form: 'cabeleireiroCadastro'
+  form: 'cadastroForm'
 })(
-  connect(null, { createCabeleireiro })(CabeleireiroCadastro)
+  connect(null, { createCabeleireiro })(CadastroForm)
 );

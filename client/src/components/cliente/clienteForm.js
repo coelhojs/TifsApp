@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { createCliente } from '../../actions/cliente';
 import { email, required, minLength8, maxLength15, cpf, letters, number, tooYoung } from "../../validation/validateFormularios";
-import normalizePhone from "../../validation/normalizePhone";
+import { normalizePhone, normalizeCNPJ } from "../../validation/normalize";
 import renderField from '../helpers/renderField';
 
 let history = require("history").createBrowserHistory;
@@ -36,7 +36,9 @@ class ClienteForm extends Component {
 						<label>Sexo</label>
 						<Field name="sexo" className="form-control" component="select">
 							{sexo.map(sexoOption =>
-								<option value={sexoOption} key={sexoOption} validate={required}>{sexoOption}</option>)}
+								<option value={sexoOption} key={sexoOption}>
+									{sexoOption}
+								</option>)}
 						</Field>
 
 						<label>CPF</label>
@@ -71,37 +73,40 @@ class ClienteForm extends Component {
 							type="email"
 							validate={[email, required]}
 						/>
+						<br />
+						<div className="form-group">
+							<label>Você já teve episódios de alergia a algum produto cosmético?</label>
+							<div className="d-flex">
+								<span className="mr-5">
+									<Field name="alergias"
+										className="form-check-input"
+										component={renderField}
+										type="radio"
+										value="true" />
+									Sim
+								</span>
 
-						{/* <div className="form-group formCheck"> */}
-						<label>Você já teve episódios de alergia a algum produto cosmético?</label>
-						<div className="form-check form-check-inline" >
-							<span>
-								<Field name="alergias"
-									className="form-check-input"
-									component={renderField}
-									type="radio"
-									value="true" />
-								Sim
-							</span>
+								<span className="">
+									<Field name="alergias" className="form-check-input" component={renderField} type="radio"
+										value="false" />
+									Não
+								</span>
+							</div>
 						</div>
-						<div className="form-check form-check-inline" >
-							<label className="form-check-label formButton2">
-								<Field name="alergias" className="form-check-input" component={renderField} type="radio"
-									value="false" />
-								Não</label>
-						</div>
-						<div className="form-group formCheck">
+
+						<div className="form-group">
 							<label>Você está em período de gravidez?</label>
-							<div className="form-check form-check-inline">
-								<label className="form-check-label formButton1">
+							<div className="d-flex">
+								<span className="mr-5">
 									<Field name="gestante" className="form-check-input" component={renderField} type="radio"
 										value="true" />
-									Sim</label>
-								<label className="form-check-label formButton2">
+									Sim
+									</span>
+								<span>
 									<Field name="gestante" className="form-check-input" component={renderField} type="radio"
 										value="false" />
 									Não
-                            </label>
+                            		</span>
 							</div>
 						</div>
 					</div>
@@ -110,7 +115,7 @@ class ClienteForm extends Component {
 					</div>
 					<br />
 					<div className="offset-md-1 col-md-5">
-						<div className="button-group d-flex justify-content-around">
+						<div className="mt-4 button-group d-flex justify-content-around">
 							<button type="button" className="btn btn-danger" disabled={pristine || submitting}
 								onClick={reset}>
 								Cancelar

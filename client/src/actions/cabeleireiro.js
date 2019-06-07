@@ -21,8 +21,8 @@ export const createCabeleireiro = formValues => async (dispatch, getState) => {
 
 export const fetchAllCabeleireiros = () => async dispatch => {
     const response = await api.get('/Cabeleireiros');
-    console.log(response);
-    dispatch({ type: FETCH_ALL_CABELEIREIROS, payload: response.data });
+    console.log(response.data.dados);
+    dispatch({ type: FETCH_ALL_CABELEIREIROS, payload: response.data.dados });
 };
 
 export const fetchCabeleireiro = id => async dispatch => {

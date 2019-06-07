@@ -11,7 +11,7 @@ class ListaServicosRecentes extends Component {
 
     renderServicos() {
         let servicosArray = lodash.map(this.props.servicos, servicos => {
-            return <CardServico key={servicos.id} servicos={servicos} />
+            return <CardServico key={servicos._id} servicos={servicos} />
         });
         // return _.take(servicosArray, 3);
         return lodash.map(servicosArray);
