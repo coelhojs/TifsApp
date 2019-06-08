@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchServicos } from '../actions/servico';
+import { fetchAllServicos } from '../actions/servico';
 import ListaServicosRecentes from "../components/servico/listaServicosRecentes";
 // import SearchInput from "../components/searchInput";
 
@@ -31,7 +31,7 @@ function mapStateToProps(state) {
 
 export default connect(
     mapStateToProps,
-    { fetchServicos }
+    { fetchAllServicos }
 )(Historico);
 
 

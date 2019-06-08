@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import { createCabeleireiro } from '../../actions/cabeleireiro';
+import { createUsuario } from '../../actions/usuario';
 import renderField from '../helpers/renderField';
 import { email, required, minLength8, maxLength15, cnpj, letters, number, tooYoung } from "../../validation/validateFormularios";
 import { normalizePhone, normalizeCNPJ } from "../../validation/normalize";
@@ -11,7 +11,7 @@ import { normalizePhone, normalizeCNPJ } from "../../validation/normalize";
 
 class CadastroForm extends Component {
   onSubmit(props) {
-    this.props.createCabeleireiro(props);
+    this.props.createUsuario(props);
   }
 
   render() {
@@ -99,5 +99,5 @@ class CadastroForm extends Component {
 export default reduxForm({
   form: 'cadastroForm'
 })(
-  connect(null, { createCabeleireiro })(CadastroForm)
+  connect(null, { createUsuario })(CadastroForm)
 );

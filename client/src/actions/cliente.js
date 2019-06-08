@@ -1,15 +1,12 @@
-import { api } from "./index";
+import { api, responseValidation } from "./index";
 import history from '../history';
 import { CREATE_CLIENTE, DELETE_CLIENTE, EDIT_CLIENTE, FETCH_ALL_CLIENTES, FETCH_CLIENTE, FETCH_CLIENTE_NAME } from './types';
 
 export const createCliente = formValues => async (dispatch, getState) => {
+    formValues.token = sessionStorage.getItem('token');
     const response = await api.post('/Clientes', { ...formValues });
-    dispatch({ type: CREATE_CLIENTE, payload: response });
-    // if (response.status == 500) {
-    //     return alert(response.data.errmsg);
-    // }
     console.log(response);
-
+    dispatch({ type: CREATE_CLIENTE, payload: response.data.dados });
     history.push('/Home');
 };
 
@@ -22,7 +19,7 @@ export const fetchAllClientes = () => async dispatch => {
 export const fetchCliente = id => async dispatch => {
     const response = await api.get(`/Clientes/${id}`);
     console.log(response);
-    dispatch({ type: FETCH_CLIENTE, payload: response });
+    dispatch({ type: FETCH_CLIENTE, payload: response.data.dados });
 };
 
 export const editCliente = (id, formValues) => async dispatch => {
@@ -31,14 +28,17 @@ export const editCliente = (id, formValues) => async dispatch => {
     dispatch({ type: EDIT_CLIENTE, payload: response.data.dados });
 };
 
-export const getClienteName = id => async dispatch => {
-    const response = await api.get(`/Clientes/${id}`);
-    dispatch({ type: FETCH_CLIENTE_NAME, payload: response.data.dados });
-};
-
 export const deleteCliente = id => async dispatch => {
     const response = await api.delete(`/Clientes/${id}`);
+    console.log(response);
     dispatch({ type: DELETE_CLIENTE, payload: response.data.dados });
+
+};
+
+export const getClienteName = id => async dispatch => {
+    const response = await api.get(`/Clientes/${id}`);
+    console.log(response);
+    dispatch({ type: FETCH_CLIENTE_NAME, payload: response.data.dados });
 };
 
 /*console.log("Testes endpoint /Cliente");

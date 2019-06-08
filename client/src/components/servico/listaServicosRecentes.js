@@ -1,12 +1,12 @@
 import * as lodash from "lodash";
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { fetchServicos } from '../../actions/servico';
+import { fetchAllServicos } from '../../actions/servico';
 import CardServico from "./cardServico";
 
 class ListaServicosRecentes extends Component {
     componentWillMount() {
-        this.props.fetchServicos();
+        this.props.fetchAllServicos();
     }
 
     renderServicos() {
@@ -34,5 +34,5 @@ function mapStateToProps(state) {
 
 export default connect(
     mapStateToProps,
-    { fetchServicos }
+    { fetchAllServicos }
 )(ListaServicosRecentes);

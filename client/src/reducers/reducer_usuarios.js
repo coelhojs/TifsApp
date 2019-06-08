@@ -1,17 +1,17 @@
 import * as lodash from "lodash";
-import { FETCH_ALL_SERVICOS, FETCH_SERVICO, CREATE_SERVICO, DELETE_SERVICO, EDIT_SERVICO } from "../actions/types";
+import { FETCH_ALL_USUARIOS, FETCH_USUARIO, CREATE_USUARIO, DELETE_USUARIO, EDIT_USUARIO } from "../actions/types";
 
 export default function (state = {}, action) {
     switch (action.type) {
-        case CREATE_SERVICO:
+        case CREATE_USUARIO:
             return { ...state, [action.payload]: action.payload };
-        case EDIT_SERVICO:
+        case EDIT_USUARIO:
             return { ...state, [action.payload._id]: action.payload };
-        case FETCH_ALL_SERVICOS:
+        case FETCH_ALL_USUARIOS:
             return action.payload;
-        case FETCH_SERVICO:
-            return { ...state, [action.payload._id]: action.payload };
-        case DELETE_SERVICO:
+        case FETCH_USUARIO:
+            return { ...state, [action.payload.token]: action.payload };
+        case DELETE_USUARIO:
             return lodash.omit(state, action.payload._id);
         default:
             return state;

@@ -17,14 +17,17 @@ const MaterialUtilizado = ({ fields }) => {
             <br />
 
             {fields.map((produto, index) => (
-                <div className="row" key={index}>
-                    <Field
-                        name={`materiais[${index}].nome`} type="text"
-                        label="Produto" inputClasses="form-control"
-                        formGroupClasses="col-4 text-center" value={produto} />
-                    <div className="form-group col-4 text-center">
-                        <label>Medida</label>
-                        <div className="row">
+                <div>
+                    <div className="row" key={index}>
+                        <div>
+                            <label>Produto</label>
+                            <Field
+                                name={`materiais[${index}].nome`} type="text"
+                                className="form-control" component={renderField}
+                                value={produto} />
+                        </div>
+                        <div className="">
+                            <label>Medida</label>
                             <Field
                                 name={`materiais[${index}].quantidade`}
                                 type="text"
@@ -46,7 +49,7 @@ const MaterialUtilizado = ({ fields }) => {
                     </div>
                 </div>
             ))}
-        </div>
+        </div >
     );
 };
 

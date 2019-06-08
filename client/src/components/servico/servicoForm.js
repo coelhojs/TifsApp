@@ -3,7 +3,7 @@ import * as lodash from "lodash";
 import { connect } from 'react-redux';
 import { formValueSelector, reduxForm } from 'redux-form';
 import { fetchAllClientes } from '../../actions/cliente';
-import { createServico, fetchServicos } from '../../actions/servico';
+import { createServico, fetchAllServicos } from '../../actions/servico';
 // import Divider from "../divider";
 import ServicoFormPage1 from "./servicoFormPage1";
 import ServicoFormPage2 from "./servicoFormPage2";
@@ -43,7 +43,7 @@ class ServicoForm extends Component {
 
     componentWillMount() {
         this.props.fetchAllClientes();
-        this.props.fetchServicos();
+        this.props.fetchAllServicos();
     }
 
     renderClientes() {
@@ -103,7 +103,7 @@ ServicoForm = reduxForm({
 })(ServicoForm)
 
 ServicoForm = connect(
-    mapStateToProps, { fetchAllClientes, createServico, fetchServicos }
+    mapStateToProps, { fetchAllClientes, createServico, fetchAllServicos }
 )(ServicoForm)
 
 export default ServicoForm

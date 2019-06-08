@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { pushRotate as Menu } from "react-burger-menu";
 import { Link } from "react-router-dom";
-import { fetchCabeleireiro } from '../actions/cabeleireiro';
+import { fetchUsuario } from '../actions/usuario';
 
 class UserMenu extends Component {
     componentDidMount() {
         // let id = "5cdca3cf4846a141f0c72d19";
-        // this.props.fetchCabeleireiro(id);
+        // this.props.fetchUsuario(id);
     }
 
     render() {
@@ -44,5 +44,5 @@ class UserMenu extends Component {
 
 export default connect(
     null,
-    { fetchCabeleireiro }
+    { fetchUsuario }
 )(UserMenu);

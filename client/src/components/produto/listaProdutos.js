@@ -1,12 +1,12 @@
 import * as lodash from "lodash";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchProdutos } from "../../actions/produto";
+import { fetchAllProdutos } from "../../actions/produto";
 import ItemProduto from "./itemProduto";
 
 class ListaProdutos extends Component {
     componentWillMount() {
-        this.props.fetchProdutos();
+        this.props.fetchAllProdutos();
     }
 
     renderProdutos() {
@@ -44,5 +44,5 @@ function mapStateToProps(state) {
 
 export default connect(
     mapStateToProps,
-    { fetchProdutos }
+    { fetchAllProdutos }
 )(ListaProdutos);

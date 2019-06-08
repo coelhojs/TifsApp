@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import { loginCabeleireiro } from '../../actions/cabeleireiro';
+import { loginUsuario } from '../../actions/usuario';
 import '../../style/general.scss';
 // import { required, maxLength, number, minValue, email } from "../validation/validateFormularios";
 import { email, required, minLength8, maxLength15 } from "../../validation/validateFormularios";
@@ -11,8 +11,8 @@ let history = require("history").createBrowserHistory;
 
 class LoginForm extends Component {
     onSubmit(props) {
-        this.props.loginCabeleireiro(props);
-        // this.props.fetchCabeleireiro(props, () => {
+        this.props.loginUsuario(props);
+        // this.props.fetchUsuario(props, () => {
         //     history.push('/');
         // });
     }
@@ -55,5 +55,5 @@ class LoginForm extends Component {
 export default reduxForm({
     form: 'loginForm'
 })(
-    connect(null, { loginCabeleireiro })(LoginForm)
+    connect(null, { loginUsuario })(LoginForm)
 );

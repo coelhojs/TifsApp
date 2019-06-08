@@ -1,5 +1,5 @@
 import { api } from "../actions/index";
-import { FETCH_ALL_CABELEIREIROS } from '../actions/types';
+import { FETCH_ALL_USUARIOS } from '../actions/types';
 
 export const maxLength = max => value =>
     value && value.length > max ? `O tamanho máximo para este campo é ${max}` : undefined;
@@ -27,9 +27,9 @@ export const minValue18 = minValue(18);
 
 // export const unique = value => async dispatch => {
 //     console.log("12");
-//     const response = await api.get('/Cabeleireiros', { value });
+//     const response = await api.get('/Usuarios', { value });
 //     console.log(response);
-//     dispatch({ type: FETCH_ALL_CABELEIREIROS, payload: response.mensagem });
+//     dispatch({ type: FETCH_ALL_USUARIOS, payload: response.mensagem });
 // }
 
 export const email = value =>

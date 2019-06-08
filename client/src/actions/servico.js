@@ -1,46 +1,44 @@
+import { api, responseValidation } from "./index";
 import history from '../history';
-import { api } from "./index";
 import { CREATE_SERVICO, DELETE_SERVICO, EDIT_SERVICO, FETCH_ALL_SERVICOS, FETCH_SERVICO, FETCH_SERVICO_NAME } from './types';
 
 export const createServico = formValues => async (dispatch, getState) => {
+    formValues.token = sessionStorage.getItem('token');
     const response = await api.post('/Servicos', { ...formValues });
-    dispatch({ type: CREATE_SERVICO, payload: response });
     console.log(response);
+    dispatch({ type: CREATE_SERVICO, payload: response.data.dados });
     history.push('/Home');
 };
 
-export const fetchServicos = () => async dispatch => {
+export const fetchAllServicos = () => async dispatch => {
     const response = await api.get('/Servicos');
-    dispatch({ type: FETCH_ALL_SERVICOS, payload: response });
+    console.log(response);
+    dispatch({ type: FETCH_ALL_SERVICOS, payload: response.data.dados });
 };
+
 export const fetchServico = id => async dispatch => {
     const response = await api.get(`/Servicos/${id}`);
-    dispatch({ type: FETCH_SERVICO, payload: response });
+    console.log(response);
+    dispatch({ type: FETCH_SERVICO, payload: response.data.dados });
 };
 
 export const editServico = (id, formValues) => async dispatch => {
-    
     const response = await api.put(`/Servicos/${id}`, formValues);
     console.log(response);
-    dispatch({ type: EDIT_SERVICO, payload: response.data });
-};
-
-// export const editServico = id => async dispatch => {
-//     const response = await api.put('/Servicos/', { ...formValues });
-//     dispatch({ type: FETCH_SERVICO, payload: response });
-// };
-
-export const getServicoName = id => async dispatch => {
-    
-    const response = await api.get(`/Servicos/${id}`);
-    dispatch({ type: FETCH_SERVICO_NAME, payload: response.data });
+    dispatch({ type: EDIT_SERVICO, payload: response.data.dados });
 };
 
 export const deleteServicos = id => async dispatch => {
     const response = await api.delete(`/Servicos/${id}`);
-    dispatch({ type: DELETE_SERVICO, payload: id });
     console.log(response);
+    dispatch({ type: DELETE_SERVICO, payload: response.data.dados });
     history.push('/Servicos');
+};
+
+export const getServicoName = id => async dispatch => {
+    const response = await api.get(`/Servicos/${id}`);
+    console.log(response);
+    dispatch({ type: FETCH_SERVICO_NAME, payload: response.data.dados });
 };
 
 // console.log("Testes endpoint /Servicos");
