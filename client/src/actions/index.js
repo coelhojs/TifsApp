@@ -38,6 +38,7 @@ export const responseValidation = response => {
             break;
         case 200:
             alert(response.data.dados._id);
+            break;
         default:
             break;
     }

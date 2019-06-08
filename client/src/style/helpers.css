@@ -9,4 +9,8 @@ label {
   margin: 0px 0px 0px 0px; }
 
 label {
-  padding-top: .5rem; }
+  padding-top: 0.5rem; }
+
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px; }

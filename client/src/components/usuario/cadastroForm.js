@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { createUsuario } from '../../actions/usuario';
+import { normalizePhone } from "../../validation/normalize";
+import { cnpj, email, letters, maxLength15, minLength8, required, tooYoung } from "../../validation/validateFormularios";
 import renderField from '../helpers/renderField';
-import { email, required, minLength8, maxLength15, cnpj, letters, number, tooYoung } from "../../validation/validateFormularios";
-import { normalizePhone, normalizeCNPJ } from "../../validation/normalize";
 
 // const validador = require('../validate/validate');
 // let history = require("history").createBrowserHistory;
@@ -21,7 +21,7 @@ class CadastroForm extends Component {
         <div className="text-center">
           <h1>Novo Usuário</h1>
         </div>
-        <div className="row">
+        <div className="row no-gutters">
           <div className="offset-md-1 col-md-5">
             <label>Nome completo</label>
             <Field className="form-control"
@@ -75,9 +75,9 @@ class CadastroForm extends Component {
               validate={[minLength8, maxLength15, required]}
             />
           </div>
-          <div className="col-md-6 text-center">
+          {/* <div className="col-md-6 text-center">
             <img src="/img/cadastroImg.svg" alt="" style={{ marginTop: '4rem' }} />
-          </div>
+          </div> */}
         </div>
         <br />
         <div className="offset-md-1 col-md-5">

@@ -5,7 +5,7 @@ import renderField from '../helpers/renderField';
 const MaterialUtilizado = ({ fields }) => {
     return (
         <div>
-            <div className="row">
+            <div className="row no-gutters">
                 <br />
                 <div className="col-8">
                     Materiais utilizados
@@ -18,7 +18,7 @@ const MaterialUtilizado = ({ fields }) => {
 
             {fields.map((produto, index) => (
                 <div>
-                    <div className="row" key={index}>
+                    <div className="row no-gutters" key={index}>
                         <div>
                             <label>Produto</label>
                             <Field

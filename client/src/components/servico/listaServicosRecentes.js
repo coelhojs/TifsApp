@@ -20,7 +20,7 @@ class ListaServicosRecentes extends Component {
     render() {
         return (
             <div className="container">
-                <div className="row justify-content-between">
+                <div className="row no-gutters justify-content-between">
                     {this.renderServicos()}
                 </div>
             </div>

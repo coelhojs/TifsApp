@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { createCliente } from '../../actions/cliente';
-import { email, required, minLength8, maxLength15, cpf, letters, number, tooYoung } from "../../validation/validateFormularios";
+import { email, required, minLength8, cpf, letters, number, tooYoung } from "../../validation/validateFormularios";
 import { normalizePhone, normalizeCNPJ } from "../../validation/normalize";
 import renderField from '../helpers/renderField';
 
@@ -23,7 +23,7 @@ class ClienteForm extends Component {
 				<div className="text-center">
 					<h1>Cadastro de Cliente</h1>
 				</div>
-				<div className="row">
+				<div className="row no-gutters">
 					<div className="offset-md-1 col-md-5">
 						<label>Nome completo</label>
 						<Field className="form-control"

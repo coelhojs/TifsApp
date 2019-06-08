@@ -1,27 +1,21 @@
 import React, { Component } from 'react';
-import LoginForm from './Login';
-import { Link } from "react-router-dom";
+import Auth from './Auth';
 
 class Landing extends Component {
     render() {
         return (
-            <div className="container">
-                <div className="rounded">
-                    <div className="row">
-                        <div className="offset-md-3 col-md-3 text-right">
-                            <h2>Bem-vindo(a)!</h2>
+            <div className="container-fluid">
+                {/* <div className="row">
+                        <div className="offset-md-3 col-md-6 text-center">
                         </div>
+                    </div> */}
+                <br />
+                <div className="row no-gutters">
+                    <div className="col-md-6">
+                        <h2>Bem-vindo(a)!</h2>
                     </div>
-
-                    <LoginForm onSubmit={this.onSubmit} />
-
-                    <div className="offset-md-3 col-md-6 text-center">
-                        <span>Ainda não possui uma conta? </span>
-                        <button className="btn btn-link">
-                            <Link to='/Cadastro'>
-                                <span>Cadastre-se</span>
-                            </Link>
-                        </button>
+                    <div className="authForms col-md-6 text-center">
+                        <Auth onSubmit={this.onSubmit} />
                     </div>
                 </div>
             </div>

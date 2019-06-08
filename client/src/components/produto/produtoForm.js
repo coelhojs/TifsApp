@@ -4,8 +4,6 @@ import { Field, reduxForm } from 'redux-form';
 import { createProduto } from '../../actions/produto';
 import renderField from '../helpers/renderField';
 
-let history = require("history").createBrowserHistory;
-
 class ProdutoForm extends Component {
     onSubmit(props) {
         console.log('onsubmit teste: ' + props);

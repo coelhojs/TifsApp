@@ -1,12 +1,18 @@
 import React from 'react';
 import Divider from '../components/divider';
 import { Link } from "react-router-dom";
-// import HelpButton from '../components/helpButton';
+import { withRouter } from 'react-router-dom';
 
-const Header = () => {
+import HelpButton from '../components/helpButton';
+
+const Header = (props) => {
+    const { location } = props;
+    if (location.pathname.match('/Inicio')) {
+        return null;
+    }
     return (
         <header>
-            {/* <HelpButton /> */}
+            <HelpButton />
             <div className="logo">
                 <Link to="/Home">
                     <img src="/img/logo-tifs.png" alt="Logo do salão Tifs" />
@@ -17,4 +23,6 @@ const Header = () => {
     );
 };
 
-export default Header;
+const HeaderWithRouter = withRouter(Header);
+
+export default HeaderWithRouter;
