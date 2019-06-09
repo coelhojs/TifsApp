@@ -25,7 +25,9 @@ export const minValue = min => value =>
     value && value < min ? `Must be at least ${min}` : undefined;
 export const minValue18 = minValue(18);
 
-// export const unique = value => async dispatch => {
+export const unique = value => api.get("/Cabeleireiros/", { value }).then(response => response.data.dados.mensagem).then(console.log);
+
+// export async const unique = value => async dispatch => {
 //     console.log("12");
 //     const response = await api.get('/Usuarios', { value });
 //     console.log(response);

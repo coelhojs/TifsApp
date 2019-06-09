@@ -4,7 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 
 const UserMenu = props => {
     const { location } = props;
-    if (location.pathname.match('/Inicio')) {
+    if (location.pathname.match("/")) {
         return null;
     }
     return (

@@ -4,17 +4,17 @@ import Auth from './Auth';
 class Landing extends Component {
     render() {
         return (
-            <div className="container-fluid">
-                {/* <div className="row">
-                        <div className="offset-md-3 col-md-6 text-center">
-                        </div>
-                    </div> */}
-                <br />
+            <div className="container-fluid landing" >
                 <div className="row no-gutters">
-                    <div className="col-md-6">
-                        <h2>Bem-vindo(a)!</h2>
+                    <div className="landing__title col-md-6 text-center">
+                        <img src="/img/logo-tifs.png" alt="" className="landing__logo" />
+                        <h1>Bem-vindo(a)!</h1>
+                        <br />
+                        <p>Controle seu histórico de serviços de forma prática e segura.
+                            <br />
+                            Mantenha um cadastro de seus clientes e produtos utilizados.</p>
                     </div>
-                    <div className="authForms col-md-6 text-center">
+                    <div className="landing__forms col-md-6 text-center">
                         <Auth onSubmit={this.onSubmit} />
                     </div>
                 </div>

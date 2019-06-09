@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { createUsuario } from '../../actions/usuario';
 import { normalizePhone } from "../../validation/normalize";
-import { cnpj, email, letters, maxLength15, minLength8, required, tooYoung } from "../../validation/validateFormularios";
+import { cnpj, email, letters, maxLength15, minLength8, required, tooYoung, unique } from "../../validation/validateFormularios";
 import renderField from '../helpers/renderField';
 
 // const validador = require('../validate/validate');
@@ -34,7 +34,7 @@ class CadastroForm extends Component {
             <Field className="form-control"
               name="cnpj"
               component={renderField}
-              validate={[cnpj]}
+              validate={[cnpj, unique]}
               type="text"
             // normalize={normalizeCNPJ}
             />
@@ -75,9 +75,6 @@ class CadastroForm extends Component {
               validate={[minLength8, maxLength15, required]}
             />
           </div>
-          {/* <div className="col-md-6 text-center">
-            <img src="/img/cadastroImg.svg" alt="" style={{ marginTop: '4rem' }} />
-          </div> */}
         </div>
         <br />
         <div className="offset-md-1 col-md-5">

@@ -19,7 +19,7 @@ class App extends Component {
             <div id="page-wrap">
                 <HeaderWithRouter />
                 <Switch>
-                    <Route exact path="/Inicio" component={Landing} />
+                    <Route exact path="/" component={Landing} />
                     <Route exact path="/Home" component={Home} />
                     <Route path="/Clientes" component={Clientes} />
                     <Route path="/Historico" component={Historico} />

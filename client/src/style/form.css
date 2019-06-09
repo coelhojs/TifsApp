@@ -1,8 +1,7 @@
 form {
-  padding: 3rem 5rem;
-  background-color: rgba(146, 82, 135, 0.527); }
+  padding: 3rem 5rem; }
 
 .form-header,
 .form-body,
 .form-footer {
-  margin-bottom: 2rem; }
+  margin-bottom: 3rem; }
