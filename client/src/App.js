@@ -20,10 +20,10 @@ class App extends Component {
                 <HeaderWithRouter />
                 <Switch>
                     <Route exact path="/" component={Landing} />
-                    <Route exact path="/Home" component={Home} />
+                    <Route path="/Home" component={Home} />
                     <Route path="/Clientes" component={Clientes} />
                     <Route path="/Historico" component={Historico} />
-                    <Route exact path="/Historico/:id" component={VisualizarHistorico} />
+                    <Route path="/Historico/:id" component={VisualizarHistorico} />
                     <Route path="/Produtos" component={Produtos} />
                     <Route path="/Servico" component={Servico} />
                     {/* <Route path="/Editar/:id" component={Editar} /> */}

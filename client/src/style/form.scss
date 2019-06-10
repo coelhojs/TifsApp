@@ -7,3 +7,22 @@ form {
 .form-footer {
     margin-bottom: 3rem;
 }
+
+.form-header {
+    padding-top: 3rem;
+}
+
+.auth-form {
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+    .form-body {
+        text-align: left;
+        label {
+            text-align: left;
+        }
+        input {
+            margin-bottom: 1rem;
+        }
+    }
+}

@@ -17,7 +17,7 @@ class LoginForm extends Component {
         const { handleSubmit, pristine, submitting } = this.props;
 
         return (
-            <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+            <form className="login-form container-fluid no-gutters" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <div className="form-header">
                     <h4>Acesse sua conta</h4>
                 </div>
@@ -36,7 +36,7 @@ class LoginForm extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="form-footer row">
+                <div className="form-footer">
                     <div className="col-md-12 text-center">
                         {/* <button className="btn btn-link btn-disabled">Esqueceu a senha?</button> */}
                         <button type="submit" className="btn btn-success shadow border-dark" disabled={pristine || submitting}>

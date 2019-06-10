@@ -5,3 +5,17 @@ form {
 .form-body,
 .form-footer {
   margin-bottom: 3rem; }
+
+.form-header {
+  padding-top: 3rem; }
+
+.auth-form {
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%; }
+  .auth-form .form-body {
+    text-align: left; }
+    .auth-form .form-body label {
+      text-align: left; }
+    .auth-form .form-body input {
+      margin-bottom: 1rem; }

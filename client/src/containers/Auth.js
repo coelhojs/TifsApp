@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import CadastroForm from "../components/usuario/cadastroForm";
 import LoginForm from "../components/usuario/loginForm";
-import { Link } from "react-router-dom";
 
 class Login extends Component {
     constructor(props) {

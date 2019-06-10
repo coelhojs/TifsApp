@@ -14,15 +14,17 @@ class CadastroForm extends Component {
     this.props.createUsuario(props);
   }
 
+
+
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props;
     return (
-      <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-        <div className="text-center">
-          <h1>Novo Usuário</h1>
+      <form className="auth-form container-fluid" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+        <div className="form-header">
+          <h4>Criar conta</h4>
         </div>
-        <div className="row no-gutters">
-          <div className="offset-md-1 col-md-5">
+        <div className="row no-gutters" style={{ position: 'relative' }}>
+          <div className="form-body offset-md-3 col-md-6">
             <label>Nome completo</label>
             <Field className="form-control"
               name="nome"
@@ -76,16 +78,20 @@ class CadastroForm extends Component {
             />
           </div>
         </div>
-        <br />
-        <div className="offset-md-1 col-md-5">
-          <div className="button-group d-flex justify-content-around">
-            <button type="button" className="btn btn-danger" disabled={pristine || submitting}
-              onClick={reset}>
-              Cancelar
+        <div className="form-footer row no-gutters">
+          <div className="offset-md-3 col-md-6">
+            <div className="button-group d-flex justify-content-around">
+              <button type="button" className="btn btn-danger" disabled={pristine || submitting}
+                onClick={reset}>
+                Cancelar
                         </button>
-            <button type="submit" className="btn btn-success" disabled={pristine || submitting}>
-              Cadastrar
+              <button type="submit" className="btn btn-success" disabled={pristine || submitting}>
+                Cadastrar
                         </button>
+            </div>
+            {/* <button className="btn btn-link" onClick={history.push('/')}>
+              Voltar para a tela de login
+            </button> */}
           </div>
         </div>
       </form >

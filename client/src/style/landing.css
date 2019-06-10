@@ -12,9 +12,8 @@
   height: 4rem;
   width: 7rem;
   margin: auto;
-  margin-bottom: 3rem; }
+  margin-bottom: 1rem; }
 
 .landing__forms {
-  padding-top: 5rem;
-  padding-bottom: 6rem;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.575); }

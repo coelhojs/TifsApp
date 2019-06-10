@@ -2,8 +2,6 @@
     color: whitesmoke;
     background: rgb(0, 0, 0);
     background: linear-gradient(40deg, rgba(0, 0, 0, 1) 0%, rgba(121, 9, 113, 1) 45%, rgba(255, 0, 125, 1) 100%);
-    // background: rgb(0, 0, 0);
-    // background: linear-gradient(13deg, rgba(0, 0, 0, 1) 0%, rgba(125, 11, 117, 1) 45%, rgba(255, 0, 125, 1) 100%);
 }
 
 .landing__title {
@@ -16,11 +14,10 @@
     height: 4rem;
     width: 7rem;
     margin: auto;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .landing__forms {
-    padding-top: 5rem;
-    padding-bottom: 6rem;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.575);
 }

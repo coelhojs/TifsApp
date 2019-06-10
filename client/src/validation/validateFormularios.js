@@ -25,7 +25,21 @@ export const minValue = min => value =>
     value && value < min ? `Must be at least ${min}` : undefined;
 export const minValue18 = minValue(18);
 
-export const unique = value => api.get("/Cabeleireiros/", { value }).then(response => response.data.dados.mensagem).then(console.log);
+// export const unique = value => async dispatch => {
+//     console.log("valor da requisição: " + value);
+//     const response = await api.get(`/Cabeleireiros?cnpj=${value}`);
+//     console.log(response);
+//     dispatch({ type: FETCH_ALL_USUARIOS, payload: response.data.dados.erro });
+//     if (response.data.dados.erro) {
+//         return undefined;
+//     } else {
+//         return "Este CNPJ já está cadastrado";
+//     }
+// }
+
+export const unique = value => api.get(`/Cabeleireiros?cnpj=${value}`).then(response => response.data.dados.erro) ? "Este CNPJ já está cadastrado" : undefined;
+
+// export const unique = value => api.get(`/Cabeleireiros?cnpj=${value}`).then(response => response.data.dados).then(console.log);
 
 // export async const unique = value => async dispatch => {
 //     console.log("12");
