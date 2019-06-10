@@ -23,7 +23,7 @@ class Login extends Component {
                     <LoginForm onSubmit={this.onSubmit} />
                     <span>Ainda não possui uma conta? </span>
                     <button className="btn btn-link" onClick={this.handleClick}>
-                        <span>Cadastre-se</span>
+                        <span id="linkCadastro">Cadastre-se</span>
                     </button>
                 </div>
             )
