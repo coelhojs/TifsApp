@@ -2,24 +2,28 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchAllServicos } from '../actions/servico';
 import ListaServicosRecentes from "../components/servico/listaServicosRecentes";
+import Header from "./Header";
 // import SearchInput from "../components/searchInput";
 
 class Historico extends Component {
     render() {
         return (
-            <div className="container-fluid">
-                <div className="page-title text-center"><h1>Histórico de serviços</h1></div>
-                {/* <div className="text-center">
+            <div className="page" id="page-wrap">
+                <Header />
+                <div className="container-fluid">
+                    <div className="page-title text-center"><h1>Histórico de serviços</h1></div>
+                    {/* <div className="text-center">
                     <div className="offset-md-5">
-                        <SearchInput />
+                    <SearchInput />
                     </div>
                     <div className="btn-group btn-group-sm">
-                        <button type="button" className="btn btn-secondary">Recentes</button>
-                        <button type="button" className="btn btn-secondary">Todos</button>
+                    <button type="button" className="btn btn-secondary">Recentes</button>
+                    <button type="button" className="btn btn-secondary">Todos</button>
                     </div>
                 </div> */}
-                <br />
-                <ListaServicosRecentes />
+                    <br />
+                    <ListaServicosRecentes />
+                </div>
             </div>
         );
     }
@@ -35,6 +39,6 @@ export default connect(
 )(Historico);
 
 
-/* <Carousel slides={this.renderServicos()} /> */ 
-/* https://www.npmjs.com/package/react-spring-3d-carousel */ 
-/* https://github.com/suhailsulu/react-carousel-3d */ 
+/* <Carousel slides={this.renderServicos()} /> */
+/* https://www.npmjs.com/package/react-spring-3d-carousel */
+/* https://github.com/suhailsulu/react-carousel-3d */

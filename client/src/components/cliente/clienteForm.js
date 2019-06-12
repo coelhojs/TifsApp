@@ -11,7 +11,6 @@ let history = require("history").createBrowserHistory;
 class ClienteForm extends Component {
 	onSubmit(props) {
 		this.props.createCliente(props, () => {
-			history.push('/');
 		});
 	}
 

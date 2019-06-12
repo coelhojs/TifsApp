@@ -2,11 +2,11 @@ import React from 'react';
 import { pushRotate as Menu } from "react-burger-menu";
 import { Link, withRouter } from "react-router-dom";
 
-const UserMenu = props => {
-    const { location } = props;
-    if (location.pathname.match("/")) {
-        return null;
-    }
+const UserMenu = () => {
+    // const { location } = props;
+    // if (location.pathname.match('/')) {
+    //     return null;
+    // }
     return (
         <Menu right pageWrapId={"page-wrap"} >
             <div>
@@ -29,7 +29,8 @@ const UserMenu = props => {
                 <span>Termos</span>
             </Link>
             <hr />
-            <Link to="/Inicio" className="menu-item">
+            <Link to="/" className="menu-item" onClick="">
+
                 <img src="/img/icones/essential/svg/exit-2.svg" alt="" width="20px" />
                 <span>Sair</span>
             </Link>

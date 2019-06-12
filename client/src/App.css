@@ -100,14 +100,16 @@ p {
 .btn-danger:hover {
   background-color: firebrick; }
 
+.page {
+  height: 100vh;
+  background: linear-gradient(40deg, #020002 0%, #370430 45%, #650135 100%); }
+
 .landing {
   color: whitesmoke;
-  background: black;
-  background: linear-gradient(40deg, black 0%, #790971 45%, #ff007d 100%); }
+  background: linear-gradient(40deg, #020002 0%, #370430 45%, #650135 100%); }
 
 .landing__title {
-  padding-top: 8rem;
-  background-color: rgba(0, 0, 0, 0.637); }
+  padding-top: 8rem; }
 
 .landing__logo {
   text-align: center;
@@ -117,30 +119,36 @@ p {
   margin-bottom: 1rem; }
 
 .landing__forms {
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.575); }
+  padding-top: 8rem;
+  height: 100vh; }
 
 form {
-  padding: 3rem 5rem; }
+  padding: 0rem 5rem; }
 
 .form-header,
 .form-body,
 .form-footer {
   margin-bottom: 3rem; }
 
-.form-header {
-  padding-top: 3rem; }
-
-.auth-form {
+.cadastro-form {
   overflow-y: scroll;
   height: 100%;
   width: 100%; }
-  .auth-form .form-body {
+  .cadastro-form .form-body {
     text-align: left; }
-    .auth-form .form-body label {
+    .cadastro-form .form-body label {
       text-align: left; }
-    .auth-form .form-body input {
+    .cadastro-form .form-body input {
       margin-bottom: 1rem; }
+
+.input-warning {
+  color: red;
+  font-size: 0.8rem;
+  line-height: 0.7; }
+
+.required:after {
+  content: " *";
+  font-size: 1rem; }
 
 html,
 #page-wrap {

@@ -4,7 +4,7 @@ import Auth from './Auth';
 class Landing extends Component {
     render() {
         return (
-            <div className="container-fluid landing" >
+            <div className="container-fluid landing page" >
                 <div className="row no-gutters">
                     <div className="landing__title col-md-6 text-center">
                         <img src="/img/logo-tifs.png" alt="" className="landing__logo" />

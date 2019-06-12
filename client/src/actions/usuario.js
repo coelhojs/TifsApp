@@ -37,5 +37,11 @@ export const loginUsuario = formValues => async dispatch => {
     const response = await api.post(`/usuarios/login`, formValues);
     dispatch({ type: FETCH_USUARIO, payload: response.data.dados });
     sessionStorage.setItem('token', response.data.dados.token);
-    console.log(sessionStorage.getItem('token'));
+    //console.log(sessionStorage.getItem('token'));
+    history.push('/Home');
 };
+
+export const logout = () => async dispatch => {
+    sessionStorage.setItem('token', '');
+    history.push('/');
+}
