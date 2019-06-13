@@ -6,7 +6,7 @@ import { CREATE_USUARIO, DELETE_USUARIO, EDIT_USUARIO, FETCH_USUARIO } from './t
 export const createUsuario = formValues => async (dispatch, getState) => {
 
     const response = await api.post('/usuarios/cadastro', { ...formValues });
-    console.log(response);
+    // console.log(response);
     dispatch({ type: CREATE_USUARIO, payload: response.data.dados });
     if (!response.data.dados.erro) {
         history.push('/');
@@ -17,14 +17,14 @@ export const createUsuario = formValues => async (dispatch, getState) => {
 
 export const fetchUsuario = id => async dispatch => {
     const response = await api.get(`/Usuarios/${id}`);
-    console.log(response);
+    // console.log(response);
     dispatch({ type: FETCH_USUARIO, payload: response.data.dados });
 };
 
 export const editUsuario = (id, formValues) => async dispatch => {
     formValues.token = sessionStorage.getItem('token');
     const response = await api.put(`/Usuarios/${id}`, formValues);
-    console.log(response);
+    // console.log(response);
     dispatch({ type: EDIT_USUARIO, payload: response.data.dados });
 };
 
@@ -40,8 +40,3 @@ export const loginUsuario = formValues => async dispatch => {
     //console.log(sessionStorage.getItem('token'));
     history.push('/Home');
 };
-
-export const logout = () => async dispatch => {
-    sessionStorage.setItem('token', '');
-    history.push('/');
-}

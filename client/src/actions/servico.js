@@ -5,27 +5,27 @@ import { CREATE_SERVICO, DELETE_SERVICO, EDIT_SERVICO, FETCH_ALL_SERVICOS, FETCH
 export const createServico = formValues => async (dispatch, getState) => {
     formValues.token = sessionStorage.getItem('token');
     const response = await api.post('/Servicos', { ...formValues });
-    console.log(response);
+    // console.log(response);
     dispatch({ type: CREATE_SERVICO, payload: response.data.dados });
     history.push('/Home');
 };
 
 export const fetchServico = id => async dispatch => {
     const response = await api.get(`/Servicos/${id}`);
-    console.log(response);
+    // console.log(response);
     dispatch({ type: FETCH_SERVICO, payload: response.data.dados });
 };
 
 export const editServico = (id, formValues) => async dispatch => {
     formValues.token = sessionStorage.getItem('token');
     const response = await api.put(`/Servicos/${id}`, formValues);
-    console.log(response);
+    // console.log(response);
     dispatch({ type: EDIT_SERVICO, payload: response.data.dados });
 };
 
 export const deleteServicos = id => async dispatch => {
     const response = await api.delete(`/Servicos/${id}`);
-    console.log(response);
+    // console.log(response);
     dispatch({ type: DELETE_SERVICO, payload: response.data.dados });
     history.push('/Servicos');
 };
@@ -33,7 +33,7 @@ export const deleteServicos = id => async dispatch => {
 export const fetchAllServicos = () => async dispatch => {
     
     const response = await api.get('/Servicos');
-    console.log(response);
+    // console.log(response);
     dispatch({ type: FETCH_ALL_SERVICOS, payload: response.data.dados });
 };
 

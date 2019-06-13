@@ -6,8 +6,6 @@ import { email, required, minLength8, cpf, letters, number, tooYoung } from "../
 import { normalizePhone, normalizeCNPJ } from "../../validation/normalize";
 import renderField from '../helpers/renderField';
 
-let history = require("history").createBrowserHistory;
-
 class ClienteForm extends Component {
 	onSubmit(props) {
 		this.props.createCliente(props, () => {
