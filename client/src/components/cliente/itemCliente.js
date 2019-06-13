@@ -8,13 +8,10 @@ const ItemCliente = ({ clientes }) => {
     //const dataNasc = moment(clientes.DataNascimento).format('DD/MM/YYYY');
 
     return (
-        <div className="col-md-3 text-center">
-            <div key={clientes._id} className="card card-cliente">
-                <h5 className="mb-1">Nome: {nome}</h5>
-                <h5 className="mb-1">Telefone: {telefone}</h5>
-            </div>
-            <br/>
-        </div >
+        <div key={clientes._id} className="list-item">
+            <h5 className="mb-1">Nome: {nome}</h5>
+            <h5 className="mb-1">Telefone: {telefone}</h5>
+        </div>
     );
 };
 
