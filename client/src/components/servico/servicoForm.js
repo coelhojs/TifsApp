@@ -71,7 +71,7 @@ class ServicoForm extends Component {
         const { page } = this.state
         return (
             <div className="container">
-                <div className="text-center">
+                <div className="form-header text-center">
                     <h1>Cadastro de Serviço</h1>
                 </div>
                 {page === 1 && <ServicoFormPage1 onSubmit={this.nextPage} clientes={this.renderClientes()} />}

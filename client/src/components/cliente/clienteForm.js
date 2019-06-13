@@ -75,7 +75,7 @@ class ClienteForm extends Component {
 						<br />
 						<div className="form-group">
 							<label>Você já teve episódios de alergia a algum produto cosmético?</label>
-							<div className="d-flex">
+							<div className="ml-5 d-flex">
 								<span className="mr-5">
 									<Field name="alergias"
 										className="form-check-input"
@@ -95,7 +95,7 @@ class ClienteForm extends Component {
 
 						<div className="form-group">
 							<label>Você está em período de gravidez?</label>
-							<div className="d-flex">
+							<div className="ml-5 d-flex">
 								<span className="mr-5">
 									<Field name="gestante" className="form-check-input" component={renderField} type="radio"
 										value="true" />
@@ -113,17 +113,17 @@ class ClienteForm extends Component {
 						<img src="/img/cadastroImg.svg" alt="" style={{ marginTop: '4rem' }} />
 					</div>
 					<br />
-					<div className="form-footer row no-gutters">
-						<div className="offset-md-1 col-md-5">
-							<div className="mt-4 button-group d-flex justify-content-around">
-								<button type="button" className="btn btn-danger" disabled={pristine || submitting}
-									onClick={reset}>
-									Cancelar
+				</div>
+				<div className="form-footer row no-gutters">
+					<div className="offset-md-1 col-md-5">
+						<div className="mt-4 button-group d-flex justify-content-around">
+							<button type="button" className="btn btn-danger" disabled={pristine || submitting}
+								onClick={reset}>
+								Cancelar
                         </button>
-								<button type="submit" className="btn btn-success" disabled={pristine || submitting}>
-									Cadastrar
+							<button type="submit" className="btn btn-success" disabled={pristine || submitting}>
+								Cadastrar
                         </button>
-							</div>
 						</div>
 					</div>
 				</div>

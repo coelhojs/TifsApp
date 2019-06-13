@@ -4,48 +4,56 @@ import renderField from '../helpers/renderField';
 
 const MaterialUtilizado = ({ fields }) => {
     return (
-        <div>
+        <div className="form-body">
             <div className="row no-gutters">
-                <br />
-                <div className="col-8">
+                <div className="col-10">
                     Materiais utilizados
                 </div>
-                <div className="col-4">
+                <div className="col-2">
                     <img style={{ width: '2rem' }} src="/img/icon/add.png" onClick={() => fields.push()} alt="" />
                 </div>
             </div>
+
             <br />
 
             {fields.map((produto, index) => (
                 <div>
                     <div className="row no-gutters" key={index}>
-                        <div>
+                        <div className="col-5">
                             <label>Produto</label>
                             <Field
                                 name={`materiais[${index}].nome`} type="text"
                                 className="renderField" component={renderField}
                                 value={produto} />
                         </div>
-                        <div className="">
-                            <label>Medida</label>
-                            <Field
-                                name={`materiais[${index}].quantidade`}
-                                type="text"
-                                className="form-control col-7"
-                                component={renderField}
-                                value={produto}
-                            />
-                            <Field name={`materiais[${index}].medida`} component="select" className="form-control col-5">
-                                <option value="" defaultValue></option>
-                                <option value="ml">ml</option>
-                                <option value="L">L</option>
-                                <option value="mg">mg</option>
-                                <option value="g">g</option>
-                            </Field>
+
+                        <div className="col-6">
+                            <div className="row no-gutters">
+                                <div className="col-4">
+                                    <label className="text-right">Medida</label>
+                                    <Field
+                                        name={`materiais[${index}].quantidade`}
+                                        type="text"
+                                        className="renderField"
+                                        component={renderField}
+                                        value={produto}
+                                    />
+                                </div>
+                                <div className="col-4">
+                                    <label>Unidade</label>
+                                    <Field name={`materiais[${index}].medida`} component="select" className="renderField">
+                                        <option value="" defaultValue></option>
+                                        <option value="ml">ml</option>
+                                        <option value="L">L</option>
+                                        <option value="mg">mg</option>
+                                        <option value="g">g</option>
+                                    </Field>
+                                </div>
+                                <div className="col-2">
+                                    <img style={{ width: '2rem' }} src="/img/icon/delete.png" onClick={() => fields.remove(index)} alt="Remover produto" />
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col">
-                        <img style={{ width: '2rem' }} src="/img/icon/delete.png" onClick={() => fields.remove(index)} alt="Remover produto" />
                     </div>
                 </div>
             ))}
