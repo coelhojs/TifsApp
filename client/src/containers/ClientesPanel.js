@@ -19,20 +19,37 @@ class ClientesPanel extends Component {
         if (this.state.isToggleOn) {
             return (
                 <div className="page container" id="page-wrap">
-                    <div className="row no-gutters">
+                    <div className="row">
                         <div className="col-12">
-                            <button className="btn btn-link">Cadastrar novo cliente</button>
+                            <div className="page-title d-flex justify-content-between">
+                                <h4>Meus clientes</h4>
+                                <button className="btn btn-link" onClick={this.handleClick}>
+                                    <i className="fas fa-user-plus fa-2x"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div className="col-12">
-                            <ListaClientes />
-                        </div>
+                    </div>
+                    <div className="col-12">
+                        <ListaClientes />
                     </div>
                 </div>
             );
         } else {
             return (
-                <div className="page" id="page-wrap">
-                    <ClienteForm onSubmit={this.onSubmit} />
+                <div className="page container" id="page-wrap">
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="page-title d-flex justify-content-between">
+                                <h4>Novo cliente</h4>
+                                <button className="btn btn-link" onClick={this.handleClick}>
+                                    <i className="fas fa-users fa-2x"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12">
+                        <ClienteForm onSubmit={this.onSubmit} />
+                    </div>
                 </div>
             );
         }

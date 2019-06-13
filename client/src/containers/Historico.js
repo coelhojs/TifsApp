@@ -8,11 +8,14 @@ import Header from "./Header";
 class Historico extends Component {
     render() {
         return (
-            <div className="page" id="page-wrap">
+            <div>
                 <Header />
-                <div className="container-fluid">
-                    <div className="page-title text-center"><h1>Histórico de serviços</h1></div>
-                    {/* <div className="text-center">
+                <div className="page container" id="page-wrap">
+                    <div className="row">
+                        <div className="page-title text-center">
+                            <h4>Histórico de serviços</h4>
+                        </div>
+                        {/* <div className="text-center">
                     <div className="offset-md-5">
                     <SearchInput />
                     </div>
@@ -21,8 +24,11 @@ class Historico extends Component {
                     <button type="button" className="btn btn-secondary">Todos</button>
                     </div>
                 </div> */}
-                    <br />
-                    <ListaServicosRecentes />
+                        <br />
+                        <div className="col-12">
+                            <ListaServicosRecentes />
+                        </div>
+                    </div>
                 </div>
             </div>
         );

@@ -10,16 +10,16 @@ const MaterialUtilizado = ({ fields }) => {
                     Materiais utilizados
                 </div>
                 <div className="col-2">
-                    <img style={{ width: '2rem' }} src="/img/icon/add.png" onClick={() => fields.push()} alt="" />
+                    <i className="fas fa-plus-circle fa-2x" onClick={() => fields.push()}></i>
                 </div>
             </div>
 
             <br />
 
             {fields.map((produto, index) => (
-                <div>
-                    <div className="row no-gutters" key={index}>
-                        <div className="col-5">
+                <div key={index}>
+                    <div className="row">
+                        <div className="col-6">
                             <label>Produto</label>
                             <Field
                                 name={`materiais[${index}].nome`} type="text"
@@ -50,11 +50,12 @@ const MaterialUtilizado = ({ fields }) => {
                                     </Field>
                                 </div>
                                 <div className="col-2">
-                                    <img style={{ width: '2rem' }} src="/img/icon/delete.png" onClick={() => fields.remove(index)} alt="Remover produto" />
+                                    <i class="fas fa-trash-alt" onClick={() => fields.remove(index)} alt="Remover produto"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <br />
                 </div>
             ))}
         </div >

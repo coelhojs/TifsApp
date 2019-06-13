@@ -17,11 +17,8 @@ class ClienteForm extends Component {
 		const { handleSubmit, pristine, reset, submitting } = this.props;
 		return (
 			<form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-				<div className="form-header text-center">
-					<h4>Novo Cliente</h4>
-				</div>
-				<div className="row no-gutters">
-					<div className="form-body offset-md-1 col-md-5">
+				<div className="row">
+					<div className="form-body col-md-6">
 						<label className="required">Nome completo</label>
 						<Field className="renderField"
 							name="nome"

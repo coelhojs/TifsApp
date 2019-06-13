@@ -3,15 +3,10 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchAllClientes } from "../../actions/cliente";
 import ItemCliente from "./itemCliente";
-import FichaCliente from "./fichaCliente";
 
 class ListaClientes extends Component {
     componentWillMount() {
         this.props.fetchAllClientes();
-    }
-
-    getCliente(id) {
-        this.props.fetchCliente(id);
     }
 
     renderClientes() {
@@ -20,23 +15,11 @@ class ListaClientes extends Component {
         });
     }
 
-    renderDetailedCliente() {
-        let clientes = undefined;
-        return <FichaCliente clientes={clientes} />
-    }
-
     render() {
         return (
-            <div className="container">
-                <div className="col-md-7">
-                    <div className="list-group">
-                        {this.renderClientes()}
-                    </div>
+                <div className="row justify-content-between">
+                    {this.renderClientes()}
                 </div>
-                <div className="col-md-5">
-                    Clique em algum item da lista para exibir os dados completos
-                </div>
-            </div>
         );
     }
 }

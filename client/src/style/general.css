@@ -1,3 +1,9 @@
+a {
+  color: snow; }
+
+a:hover {
+  color: #a7a7a7; }
+
 header {
   padding-top: 3rem; }
 
@@ -10,7 +16,14 @@ header {
   width: 40px;
   margin-right: 30px; }
 
+.card-cliente {
+  background-color: rgba(246, 246, 246, 0.212);
+  color: snow;
+  padding: 0.5rem; }
+
 .card-servico {
+  background-color: rgba(246, 246, 246, 0.212);
+  color: snow;
   margin-bottom: 1rem;
   min-height: 18rem; }
 
