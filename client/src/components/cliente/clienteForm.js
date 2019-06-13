@@ -42,7 +42,8 @@ class ClienteForm extends Component {
 						<Field className="renderField"
 							name="cpf"
 							component={renderField}
-							validate={[number, cpf]}
+							validate={[cpf]}
+							maxLength="14"
 							normalize={normalizeCPF}
 							type="text"
 						/>
