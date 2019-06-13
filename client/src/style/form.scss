@@ -5,6 +5,7 @@ form {
 .form-header,
 .form-body,
 .form-footer {
+    color: snow;
     margin-bottom: 3rem;
 }
 
@@ -16,22 +17,54 @@ form {
         text-align: left;
         label {
             text-align: left;
+            margin-top: 1rem;
         }
         input {
-            margin-bottom: 1rem;
+            background: rgb(255, 255, 255);
+            background: linear-gradient(
+                0deg,
+                rgba(255, 255, 255, 0.4822303921568627) 0%,
+                rgba(255, 255, 255, 0.24413515406162467) 17%,
+                rgba(255, 255, 255, 0) 32%
+            );
         }
     }
 }
 
 .input-warning {
-    color: red;
+    color: #b6465f;
     font-size: 0.8rem;
-    line-height: 0.7;
+    line-height: 1.5;
 }
-
 
 .required:after {
     content: " *";
     font-size: 1rem;
+}
 
+label {
+    font-size: 0.8rem;
+    color: snow;
+}
+
+.renderField {
+    background-color: transparent;
+    color: snow;
+    border-radius: 0;
+    border: none;
+    border-bottom: 0.2rem solid snow;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    font-family: inherit;
+    font-size: 1rem;
+
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.renderField:focus {
+    outline: none;
 }

@@ -23,7 +23,7 @@ const MaterialUtilizado = ({ fields }) => {
                             <label>Produto</label>
                             <Field
                                 name={`materiais[${index}].nome`} type="text"
-                                className="form-control" component={renderField}
+                                className="renderField" component={renderField}
                                 value={produto} />
                         </div>
                         <div className="">

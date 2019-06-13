@@ -11,7 +11,7 @@ export const required = value => value ? undefined : 'Campo obrigatório';
 export const minLength8 = minLength(8);
 export const maxLength15 = maxLength(15);
 export const cnpj = value => {
-    if (value && value.length === 14) {
+    if (value && value.length === 18) {
         return undefined;
     }
     else {
@@ -37,7 +37,15 @@ export const minValue18 = minValue(18);
 //     }
 // }
 
-export const unique = value => api.get(`/Cabeleireiros?cnpj=${value}`).then(response => response.data.dados.erro) ? "Este CNPJ já está cadastrado" : undefined;
+
+export const unique = value => {
+    if (value && value.length >= 18) {
+        console.log(value);
+        return checkOnServer(value);
+    }
+}
+
+export const checkOnServer = value => api.get(`/Cabeleireiros?cnpj=${value}`).then(response => response.erro) ? undefined : `Este CNPJ já está cadastrado`;
 
 // export const unique = value => api.get(`/Cabeleireiros?cnpj=${value}`).then(response => response.data.dados).then(console.log);
 

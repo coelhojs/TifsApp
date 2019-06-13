@@ -12,7 +12,7 @@ const ServicoFormPage2 = (props) => {
                 <div className="form-row">
                     <label className="col-4">Serviço</label>
                     <div className="col-6">
-                        <Field name="nome" className="form-control" component="select">
+                        <Field name="nome" className="renderField" component="select">
                             <option defaultValue>Selecione um serviço</option>
                             <option value="Escova">Escova</option>
                             <option value="Corte">Corte</option>

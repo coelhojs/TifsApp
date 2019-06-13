@@ -11,7 +11,7 @@ const ServicoFormPage1 = (props) => {
                 <div className="form-row">
                     <label className="col-4">Data</label>
                     <div className="col-6">
-                        <Field name="data" type="date" component={renderField} className="form-control" />
+                        <Field name="data" type="date" component={renderField} className="renderField" />
                     </div>
                 </div>
             </div>
@@ -20,7 +20,7 @@ const ServicoFormPage1 = (props) => {
                 <div className="form-row">
                     <label className="col-4">Cliente</label>
                     <div className="col-6">
-                        <Field name="cliente" className="form-control" component="select">
+                        <Field name="cliente" className="renderField" component="select">
                             <option key={0}>Selecione um(a) cliente</option>
                             {clientes}
                         </Field></div>
@@ -30,7 +30,7 @@ const ServicoFormPage1 = (props) => {
                 <div className="form-group"></div>
                 <label className="col-10" style={{ padding: '0px' }}>Observações sobre o cliente</label>
                 <div className="col-10" style={{ padding: '0px' }}>
-                    <Field name="anotacoes" className="form-control" component="textarea" />
+                    <Field name="anotacoes" className="renderField" component="textarea" />
                 </div>
             </div>
             <br/>

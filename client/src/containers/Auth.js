@@ -21,15 +21,17 @@ class Login extends Component {
             return (
                 <div>
                     <LoginForm onSubmit={this.onSubmit} />
-                    <span>Ainda não possui uma conta? </span>
-                    <button className="btn btn-link" onClick={this.handleClick}>
-                        <span id="linkCadastro">Cadastre-se</span>
-                    </button>
+                    <div className="text-center">
+                        <span>Ainda não possui uma conta? </span>
+                        <button className="btn btn-link" onClick={this.handleClick}>
+                            <span id="linkCadastro">Cadastre-se</span>
+                        </button>
+                    </div>
                 </div>
             )
         } else {
             return (
-                <CadastroForm onSubmit={this.onSubmit} />
+                    <CadastroForm onSubmit={this.onSubmit}/>                
             )
         }
     }

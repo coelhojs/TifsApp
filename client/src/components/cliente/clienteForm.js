@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { createCliente } from '../../actions/cliente';
 import { email, required, minLength8, cpf, letters, number, tooYoung } from "../../validation/validateFormularios";
-import { normalizePhone, normalizeCNPJ } from "../../validation/normalize";
+import { normalizePhone, normalizeCPF } from "../../validation/normalize";
 import renderField from '../helpers/renderField';
 
 class ClienteForm extends Component {
@@ -17,45 +17,46 @@ class ClienteForm extends Component {
 		const { handleSubmit, pristine, reset, submitting } = this.props;
 		return (
 			<form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-				<div className="text-center">
+				<div className="form-header text-center">
 					<h1>Cadastro de Cliente</h1>
 				</div>
 				<div className="row no-gutters">
-					<div className="offset-md-1 col-md-5">
-						<label>Nome completo</label>
-						<Field className="form-control"
+					<div className="form-body offset-md-1 col-md-5">
+						<label className="required">Nome completo</label>
+						<Field className="renderField"
 							name="nome"
 							component={renderField}
 							type="text"
 							validate={[minLength8, letters, required]}
 						/>
 
-						<label>Sexo</label>
-						<Field name="sexo" className="form-control" component="select">
+						<label className="required">Sexo</label>
+						<Field name="sexo" className="renderField" component="select">
 							{sexo.map(sexoOption =>
 								<option value={sexoOption} key={sexoOption}>
 									{sexoOption}
 								</option>)}
 						</Field>
 
-						<label>CPF</label>
-						<Field className="form-control"
+						<label className="required">CPF</label>
+						<Field className="renderField"
 							name="cpf"
 							component={renderField}
 							validate={[number, cpf]}
+							normalize={normalizeCPF}
 							type="text"
 						/>
 
-						<label>Data de nascimento</label>
-						<Field className="form-control"
+						<label className="required">Data de nascimento</label>
+						<Field className="renderField"
 							name="dataNascimento"
 							component={renderField}
 							type="date"
 							validate={[tooYoung, required]}
 						/>
 
-						<label>Telefone</label>
-						<Field className="form-control"
+						<label className="required">Telefone</label>
+						<Field className="renderField"
 							name="telefone"
 							component={renderField}
 							type="tel"
@@ -63,8 +64,8 @@ class ClienteForm extends Component {
 							validate={required}
 						/>
 
-						<label>E-mail</label>
-						<Field className="form-control"
+						<label className="required">E-mail</label>
+						<Field className="renderField"
 							name="email"
 							component={renderField}
 							type="email"
@@ -111,15 +112,17 @@ class ClienteForm extends Component {
 						<img src="/img/cadastroImg.svg" alt="" style={{ marginTop: '4rem' }} />
 					</div>
 					<br />
-					<div className="offset-md-1 col-md-5">
-						<div className="mt-4 button-group d-flex justify-content-around">
-							<button type="button" className="btn btn-danger" disabled={pristine || submitting}
-								onClick={reset}>
-								Cancelar
+					<div className="form-footer row no-gutters">
+						<div className="offset-md-1 col-md-5">
+							<div className="mt-4 button-group d-flex justify-content-around">
+								<button type="button" className="btn btn-danger" disabled={pristine || submitting}
+									onClick={reset}>
+									Cancelar
                         </button>
-							<button type="submit" className="btn btn-success" disabled={pristine || submitting}>
-								Cadastrar
+								<button type="submit" className="btn btn-success" disabled={pristine || submitting}>
+									Cadastrar
                         </button>
+							</div>
 						</div>
 					</div>
 				</div>

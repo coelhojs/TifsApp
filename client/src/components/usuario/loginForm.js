@@ -18,25 +18,24 @@ class LoginForm extends Component {
 
         return (
             <form className="login-form container-fluid no-gutters" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-                <div className="form-header">
+                <div className="form-header text-center">
                     <h4>Acesse sua conta</h4>
                 </div>
-                <div className="form-body">
-                    <div className="form-row">
-                        <label className="col-md-3 text-right">E-mail</label>
-                        <div className="col-md-6">
-                            <Field name="email" type="email" component={renderField} className="form-control" validate={[email, required]} />
-                        </div>
+                <div className="form-body offset-md-3 col-md-6">
+
+                    <label className="">E-mail</label>
+                    <div className="">
+                        <Field name="email" type="email" className="renderField" component={renderField} validate={[email]} />
                     </div>
+
                     <br />
-                    <div className="form-row">
-                        <label className="col-md-3 text-right">Senha</label>
-                        <div className="col-md-6">
-                            <Field name="senha" type="password" component={renderField} className="form-control" validate={[minLength8, maxLength15, required]} />
-                        </div>
+
+                    <label className="">Senha</label>
+                    <div className="">
+                        <Field name="senha" type="password" className="renderField" component={renderField} />
                     </div>
                 </div>
-                <div className="form-footer">
+                <div className="form-footer text-center">
                     <div className="col-md-12 text-center">
                         {/* <button className="btn btn-link btn-disabled">Esqueceu a senha?</button> */}
                         <button type="submit" className="btn btn-success shadow border-dark" disabled={pristine || submitting}>

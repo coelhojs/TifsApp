@@ -14,7 +14,7 @@ class Landing extends Component {
                             <br />
                             Mantenha um cadastro de seus clientes e produtos utilizados.</p>
                     </div>
-                    <div className="landing__forms col-md-6 text-center">
+                    <div className="landing__forms col-md-6">
                         <Auth onSubmit={this.onSubmit} />
                     </div>
                 </div>
