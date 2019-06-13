@@ -107,7 +107,7 @@ class ClienteForm extends Component {
 						</div>
 					</div>
 					<div className="col-md-6 text-center">
-						<img src="/img/cadastroImg.svg" alt="" style={{ marginTop: '4rem' }} />
+						<img src="/img/cadastroImg.svg" alt="" style={{ marginTop: '4rem', fill: 'snow' }} />
 					</div>
 					<br />
 				</div>

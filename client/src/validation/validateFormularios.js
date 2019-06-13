@@ -28,7 +28,7 @@ export const minValue18 = minValue(18);
 // export const unique = value => async dispatch => {
 //     console.log("valor da requisição: " + value);
 //     const response = await api.get(`/Cabeleireiros?cnpj=${value}`);
-//     // console.log(response);
+//     console.log(response);
 //     dispatch({ type: FETCH_ALL_USUARIOS, payload: response.data.dados.erro });
 //     if (response.data.dados.erro) {
 //         return undefined;
@@ -52,7 +52,7 @@ export const checkOnServer = value => api.get(`/Cabeleireiros?cnpj=${value}`).th
 // export async const unique = value => async dispatch => {
 //     console.log("12");
 //     const response = await api.get('/Usuarios', { value });
-//     // console.log(response);
+//     console.log(response);
 //     dispatch({ type: FETCH_ALL_USUARIOS, payload: response.mensagem });
 // }
 

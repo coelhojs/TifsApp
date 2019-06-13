@@ -5,7 +5,7 @@ const ItemCliente = ({ clientes }) => {
     //const key = clientes.id;
     const nome = clientes.nome;
     const telefone = clientes.telefone;
-    const cpf = clientes.CPF;
+    const cpf = clientes.cpf;
     const dataNasc = moment(clientes.DataNascimento).format('DD/MM/YYYY');
 
     return (
