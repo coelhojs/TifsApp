@@ -1,0 +1,23 @@
+.landing {
+    color: whitesmoke;
+    background: linear-gradient(40deg, rgba(2, 0, 2, 255) 0%, rgba(55, 4, 48, 255) 45%, rgba(101, 1, 53, 255) 100%);
+}
+
+.landing__title {
+    // background-color: rgba(0, 0, 0, 0.637);
+    padding-top: 8rem;
+}
+
+.landing__logo {
+    text-align: center;
+    height: 4rem;
+    width: 7rem;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.landing__forms {
+    // background-color: rgba(0, 0, 0, 0.575);
+    padding-top: 8rem;
+    height: 100vh;
+}

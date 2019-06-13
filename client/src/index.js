@@ -6,7 +6,7 @@ import { Router } from "react-router-dom";
 import { applyMiddleware, compose, createStore } from 'redux';
 import reduxThunk from 'redux-thunk';
 import App from "./App";
-// import UserMenu from "./containers/UserMenu";
+//import UserMenuWithRouter from "./containers/UserMenu";
 import history from './history';
 import reducers from "./reducers";
 import * as serviceWorker from "./serviceWorker";
@@ -21,7 +21,7 @@ const store = createStore(
 ReactDOM.render(
     <Provider store={store}>
         <Router history={history}>
-            {/* <UserMenu /> */}
+            {/* <UserMenuWithRouter /> */}
             <App />
         </Router>
     </Provider>,

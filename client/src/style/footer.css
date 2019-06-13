@@ -1,9 +1,7 @@
 footer {
   background-color: black;
-  width: 100%;
-  margin-top: auto;
-  position: fixed;
-  bottom: 0; }
+  margin-top: 20rem;
+  width: 100%; }
 
 .social:hover {
   -webkit-transform: scale(1.1);

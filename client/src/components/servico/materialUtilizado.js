@@ -4,49 +4,61 @@ import renderField from '../helpers/renderField';
 
 const MaterialUtilizado = ({ fields }) => {
     return (
-        <div>
-            <div className="row">
-                <br />
-                <div className="col-8">
+        <div className="form-body">
+            <div className="row no-gutters">
+                <div className="col-10">
                     Materiais utilizados
                 </div>
-                <div className="col-4">
-                    <img style={{ width: '2rem' }} src="/img/icon/add.png" onClick={() => fields.push()} alt="" />
+                <div className="col-2">
+                    <i className="fas fa-plus-circle fa-2x" onClick={() => fields.push()}></i>
                 </div>
             </div>
+
             <br />
 
             {fields.map((produto, index) => (
-                <div className="row" key={index}>
-                    <Field
-                        name={`materiais[${index}].nome`} type="text"
-                        label="Produto" inputClasses="form-control"
-                        formGroupClasses="col-4 text-center" value={produto} />
-                    <div className="form-group col-4 text-center">
-                        <label>Medida</label>
-                        <div className="row">
+                <div key={index}>
+                    <div className="row">
+                        <div className="col-6">
+                            <label>Produto</label>
                             <Field
-                                name={`materiais[${index}].quantidade`}
-                                type="text"
-                                className="form-control col-7"
-                                component={renderField}
-                                value={produto}
-                            />
-                            <Field name={`materiais[${index}].medida`} component="select" className="form-control col-5">
-                                <option value="" defaultValue></option>
-                                <option value="ml">ml</option>
-                                <option value="L">L</option>
-                                <option value="mg">mg</option>
-                                <option value="g">g</option>
-                            </Field>
+                                name={`materiais[${index}].nome`} type="text"
+                                className="renderField" component={renderField}
+                                value={produto} />
+                        </div>
+
+                        <div className="col-6">
+                            <div className="row no-gutters">
+                                <div className="col-4">
+                                    <label className="text-right">Medida</label>
+                                    <Field
+                                        name={`materiais[${index}].quantidade`}
+                                        type="text"
+                                        className="renderField"
+                                        component={renderField}
+                                        value={produto}
+                                    />
+                                </div>
+                                <div className="col-4">
+                                    <label>Unidade</label>
+                                    <Field name={`materiais[${index}].medida`} component="select" className="renderField">
+                                        <option value="" defaultValue></option>
+                                        <option value="ml">ml</option>
+                                        <option value="L">L</option>
+                                        <option value="mg">mg</option>
+                                        <option value="g">g</option>
+                                    </Field>
+                                </div>
+                                <div className="col-2">
+                                    <i className="fas fa-trash-alt" onClick={() => fields.remove(index)} alt="Remover produto"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div className="col">
-                        <img style={{ width: '2rem' }} src="/img/icon/delete.png" onClick={() => fields.remove(index)} alt="Remover produto" />
-                    </div>
+                    <br />
                 </div>
             ))}
-        </div>
+        </div >
     );
 };
 

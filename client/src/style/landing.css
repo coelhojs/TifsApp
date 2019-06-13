@@ -1,0 +1,17 @@
+.landing {
+  color: whitesmoke;
+  background: linear-gradient(40deg, #020002 0%, #370430 45%, #650135 100%); }
+
+.landing__title {
+  padding-top: 8rem; }
+
+.landing__logo {
+  text-align: center;
+  height: 4rem;
+  width: 7rem;
+  margin: auto;
+  margin-bottom: 1rem; }
+
+.landing__forms {
+  padding-top: 8rem;
+  height: 100vh; }

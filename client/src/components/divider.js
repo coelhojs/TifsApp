@@ -5,7 +5,7 @@ const Divider = () => {
         marginLeft: '8rem',
         marginRight: '8rem',
         border: '0',
-        borderTop: '3px solid lightgray'
+        borderTop: '0.5px solid snow'
     }
 
     return (

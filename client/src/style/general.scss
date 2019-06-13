@@ -5,9 +5,18 @@
 //     height: 100%;
 // }
 
-html,
-#page-wrap {
-    background-color: rgba(100, 100, 100, 0.1);
+// html,
+// #page-wrap {
+//     background-color: rgba(100, 100, 100, 0.1);
+// }
+
+a {
+    color: snow;
+}
+
+a:hover {
+    color: rgb(167, 167, 167);
+    text-decoration: unset;
 }
 
 header {
@@ -25,7 +34,15 @@ header {
     margin-right: 30px;
 }
 
-.card {
+.card-cliente {
+    background-color: rgba(246, 246, 246, 0.212);
+    color: snow;
+    padding: 0.5rem;
+}
+
+.card-servico {
+    background-color: rgba(246, 246, 246, 0.212);
+    color: snow;
     margin-bottom: 1rem;
     min-height: 18rem;
 }
@@ -36,4 +53,9 @@ header {
         margin-bottom: 0.5rem;
         margin-right: 0.5rem;
     }
+}
+
+.table-produtos {
+    background-color: rgba(246, 246, 246, 0.212);
+    color: snow;
 }

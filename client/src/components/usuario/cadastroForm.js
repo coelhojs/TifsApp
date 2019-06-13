@@ -1,84 +1,85 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import { createCabeleireiro } from '../../actions/cabeleireiro';
+import { createUsuario } from '../../actions/usuario';
+import { normalizePhone, normalizeCNPJ } from "../../validation/normalize";
+import { cnpj, email, letters, maxLength15, minLength8, required, tooYoung, unique } from "../../validation/validateFormularios";
 import renderField from '../helpers/renderField';
-import { email, required, minLength8, maxLength15, cnpj, letters, number, tooYoung } from "../../validation/validateFormularios";
-import normalizePhone from "../../validation/normalizePhone";
 
 // const validador = require('../validate/validate');
 // let history = require("history").createBrowserHistory;
 
-class CabeleireiroCadastro extends Component {
+class CadastroForm extends Component {
   onSubmit(props) {
-    this.props.createCabeleireiro(props);
+    this.props.createUsuario(props);
   }
 
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props;
     return (
-      <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-        <div className="text-center">
-          <h1>Novo Usuário</h1>
+
+      <form className="cadastro-form container-fluid" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+        <div className="form-header text-center">
+          <h4>Criar conta</h4>
         </div>
-        <div className="row">
-          <div className="offset-md-1 col-md-5">
-            <label>Nome completo</label>
-            <Field className="form-control"
+        <div className="row no-gutters" >
+          <div className="form-body offset-md-3 col-md-6">
+            <label className="required">Nome completo</label>
+            <Field className="renderField"
               name="nome"
               component={renderField}
               type="text"
               validate={[minLength8, letters, required]} />
 
-            <label>CNPJ</label>
-            <Field className="form-control"
+            <label className="required">CNPJ</label>
+            <Field className="renderField"
               name="cnpj"
               component={renderField}
-              validate={[number, cnpj]}
+              validate={[cnpj, unique, required]}
+              maxLength="18"
               type="text"
+              normalize={normalizeCNPJ}
             />
-            <label>Telefone</label>
-            <Field className="form-control"
+            <label className="required">Telefone</label>
+            <Field className="renderField"
               name="telefone"
               component={renderField}
               type="tel"
               normalize={normalizePhone}
               validate={required}
             />
-            <label>E-mail</label>
-            <Field className="form-control"
+            <label className="required">E-mail</label>
+            <Field className="renderField"
               name="email"
               component={renderField}
               type="email"
               validate={[email, required]}
             />
-            <label>Data de nascimento</label>
-            <Field className="form-control"
+            <label className="required">Data de nascimento</label>
+            <Field className="renderField"
               name="dataNascimento"
               component={renderField}
               type="date"
               validate={[tooYoung, required]}
             />
-            <label>Senha</label>
-            <Field className="form-control"
+            <label className="required">Senha</label>
+            <Field className="renderField"
               name="senha"
               component={renderField}
               type="password"
               validate={[minLength8, maxLength15, required]}
             />
-            <label>Repetir senha</label>
-            <Field className="form-control"
+            <label className="required">Repetir senha</label>
+            <Field className="renderField"
               name="repetirSenha"
               component={renderField}
               type="password"
               validate={[minLength8, maxLength15, required]}
             />
           </div>
-          <div className="col-md-6 text-center">
-            <img src="/img/cadastroImg.svg" alt="" style={{ marginTop: '4rem' }} />
-          </div>
-          <br />
-          <div className="offset-md-1 col-md-5">
+        </div>
+        <div className="form-footer row no-gutters">
+          <div className="offset-md-3 col-md-6">
             <div className="button-group d-flex justify-content-around">
               <button type="button" className="btn btn-danger" disabled={pristine || submitting}
                 onClick={reset}>
@@ -88,16 +89,18 @@ class CabeleireiroCadastro extends Component {
                 Cadastrar
                         </button>
             </div>
+            {/* <button className="btn btn-link" onClick={isToggleOn = false}>
+              Voltar para a tela de login
+            </button> */}
           </div>
         </div>
-        <br />
       </form >
     );
   }
 }
 
 export default reduxForm({
-  form: 'cabeleireiroCadastro'
+  form: 'cadastroForm'
 })(
-  connect(null, { createCabeleireiro })(CabeleireiroCadastro)
+  connect(null, { createUsuario })(CadastroForm)
 );

@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
-import ListaProdutos from '../components/produto/listaProdutos';
-import ProdutoForm from "../components/produto/produtoForm";
+import React from 'react';
+import Header from './Header';
+import ProdutosPanel from './ProdutosPanel';
 
-class Produtos extends Component {
-    render() {
-        return (
-            <div>
-                <ProdutoForm onSubmit={this.onSubmit} />
-                {/* <ListaProdutos /> */}
-            </div>
-        );
-    }
-}
+const Produtos = () => {
+    return (
+        <div>
+            <Header />
+            <ProdutosPanel />
+        </div>
+    );
+};
 
 export default Produtos;

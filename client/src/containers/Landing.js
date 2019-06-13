@@ -1,28 +1,22 @@
 import React, { Component } from 'react';
-import LoginForm from './Login';
-import { Link } from "react-router-dom";
+import Auth from './Auth';
 
 class Landing extends Component {
     render() {
         return (
-            <div className="container">
-                <div className="rounded">
-                    <div className="row">
-                        <div className="offset-md-4 col-md">
-                            <h2>Bem-vindo(a)!</h2>
-                        </div>
-                        <div className="col-md-5 text-left">
-                            <button className="btn btn-link">
-                                <Link to='/Cadastro'>
-                                    <h5>Cadastre-se</h5>
-                                </Link>
-                            </button>
-                        </div>
+            <div className="container-fluid landing page" >
+                <div className="row no-gutters">
+                    <div className="landing__title col-md-6 text-center">
+                        <img src="/img/logo-tifs.png" alt="" className="landing__logo" />
+                        <h1>Bem-vindo(a)!</h1>
+                        <br />
+                        <p>Controle seu histórico de serviços de forma prática e segura.
+                            <br />
+                            Mantenha um cadastro de seus clientes e produtos utilizados.</p>
                     </div>
-
-                    <LoginForm onSubmit={this.onSubmit} />
-                    {/* <Link to="/Cadastro" className="btn m-2 btn-dark col-2">Cadastrar</Link>
-                    <Link to="/Login" className="btn m-2 btn-dark col-2">Login</Link> */}
+                    <div className="landing__forms col-md-6">
+                        <Auth onSubmit={this.onSubmit} />
+                    </div>
                 </div>
             </div>
 

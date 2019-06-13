@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
-import ListaClientes from "../components/cliente/listaClientes";
-import ClienteForm from "../components/cliente/clienteForm";
+import React from 'react';
+import Header from "./Header";
+import ClientesPanel from './ClientesPanel';
 
-class Clientes extends Component {
-    render() {
-        return (
-            <div>
-                <ClienteForm onSubmit={this.onSubmit} />
-                <ListaClientes />
-            </div>
-        );
-    }
+const Clientes = () => {
+    return (
+        <div>
+            <Header />
+            <ClientesPanel />
+        </div>
+    )
 }
 
 export default Clientes;

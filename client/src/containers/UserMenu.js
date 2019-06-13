@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { pushRotate as Menu } from "react-burger-menu";
 import { Link } from "react-router-dom";
-import { fetchCabeleireiro } from '../actions/cabeleireiro';
+
+// let history = require("history").createBrowserHistory;
 
 class UserMenu extends Component {
-    componentDidMount() {
-        // let id = "5cdca3cf4846a141f0c72d19";
-        // this.props.fetchCabeleireiro(id);
+
+    logout() {
+        let tokenVALUE = sessionStorage.getItem('token');
+        console.log("Token antes do logout: " + tokenVALUE);
+        sessionStorage.setItem('token', '');
+        console.log("Token depois do logout: " + tokenVALUE);
     }
+
+    // const { location } = props;
+    // if (location.pathname.match('/')) {
+    //     return null;
+    // }
 
     render() {
         return (
@@ -33,7 +41,7 @@ class UserMenu extends Component {
                     <span>Termos</span>
                 </Link>
                 <hr />
-                <Link to="/" className="menu-item">
+                <Link to="/" className="menu-item" onClick={this.logout()}>
                     <img src="/img/icones/essential/svg/exit-2.svg" alt="" width="20px" />
                     <span>Sair</span>
                 </Link>
@@ -41,8 +49,8 @@ class UserMenu extends Component {
         )
     }
 }
+export default UserMenu;
 
-export default connect(
-    null,
-    { fetchCabeleireiro }
-)(UserMenu);
+    // const UserMenuWithRouter = withRouter(UserMenu);
+
+    // export default UserMenuWithRouter;

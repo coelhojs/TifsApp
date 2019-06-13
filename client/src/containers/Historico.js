@@ -1,25 +1,35 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchServicos } from '../actions/servico';
+import { fetchAllServicos } from '../actions/servico';
 import ListaServicosRecentes from "../components/servico/listaServicosRecentes";
+import Header from "./Header";
 // import SearchInput from "../components/searchInput";
 
 class Historico extends Component {
     render() {
         return (
-            <div className="container-fluid">
-                <div className="page-title text-center"><h1>Histórico de serviços</h1></div>
-                {/* <div className="text-center">
+            <div>
+                <Header />
+                <div className="page container" id="page-wrap">
+                    <div className="row">
+                        <div className="page-title text-center">
+                            <h4>Histórico de serviços</h4>
+                        </div>
+                        {/* <div className="text-center">
                     <div className="offset-md-5">
-                        <SearchInput />
+                    <SearchInput />
                     </div>
                     <div className="btn-group btn-group-sm">
-                        <button type="button" className="btn btn-secondary">Recentes</button>
-                        <button type="button" className="btn btn-secondary">Todos</button>
+                    <button type="button" className="btn btn-secondary">Recentes</button>
+                    <button type="button" className="btn btn-secondary">Todos</button>
                     </div>
                 </div> */}
-                <br />
-                <ListaServicosRecentes />
+                        <br />
+                        <div className="col-12">
+                            <ListaServicosRecentes />
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
@@ -31,10 +41,10 @@ function mapStateToProps(state) {
 
 export default connect(
     mapStateToProps,
-    { fetchServicos }
+    { fetchAllServicos }
 )(Historico);
 
 
-/* <Carousel slides={this.renderServicos()} /> */ 
-/* https://www.npmjs.com/package/react-spring-3d-carousel */ 
-/* https://github.com/suhailsulu/react-carousel-3d */ 
+/* <Carousel slides={this.renderServicos()} /> */
+/* https://www.npmjs.com/package/react-spring-3d-carousel */
+/* https://github.com/suhailsulu/react-carousel-3d */

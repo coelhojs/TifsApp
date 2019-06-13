@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Header from "./Header";
 
 class Home extends Component {
     render() {
         return (
-            <main className="home">
+            <main className="page home">
+                <Header />
                 <div className="d-flex justify-content-around">
                     <Link to="/Servico" className="btn-lg m-2 btn-dark col-3">
                         <img src="./img/icones/essential/svg/add-1.svg" className="home__btn" alt="" />

@@ -26,7 +26,7 @@ const SearchInput = () => {
     return (
         <div className="form-group" style={searchInputStyle}>
             <span className="fa fa-search form-control-feedback" style={formControlFeedbackStyle}></span>
-            <input type="text" className="form-control" placeholder="Buscar" style={formControlStyle} />
+            <input type="text" className="renderField" placeholder="Buscar" style={formControlStyle} />
         </div>
     );
 };

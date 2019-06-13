@@ -1,2 +1,65 @@
 form {
-  margin: 1rem 8rem; }
+  padding: 0rem 5rem; }
+
+.form-header,
+.form-body,
+.form-footer {
+  color: snow;
+  margin-bottom: 3rem; }
+
+.cadastro-form {
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%; }
+  .cadastro-form .form-body {
+    text-align: left; }
+    .cadastro-form .form-body label {
+      text-align: left;
+      margin-top: 1rem; }
+    .cadastro-form .form-body input {
+      background: white;
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.48223) 0%, rgba(255, 255, 255, 0.244135) 17%, rgba(255, 255, 255, 0) 32%); }
+
+.input-warning {
+  color: #b6465f;
+  font-size: 0.8rem;
+  line-height: 1.5; }
+
+.required:after {
+  content: " *";
+  font-size: 1rem; }
+
+label {
+  font-size: 0.8rem;
+  color: snow; }
+
+.renderField {
+  background-color: transparent;
+  color: snow;
+  border-radius: 0;
+  border: none;
+  border-bottom: 0.2rem solid snow;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  font-size: 1rem;
+  display: block;
+  box-sizing: border-box;
+  width: 100%; }
+
+.renderField:focus {
+  outline: none; }
+
+select option {
+  background: rgba(0, 0, 0, 0.3);
+  color: black; }
+
+input,
+select {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
+
+select {
+  height: 28.5px;
+  vertical-align: top; }

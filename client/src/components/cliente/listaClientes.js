@@ -1,26 +1,25 @@
 import * as lodash from "lodash";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchClientes } from "../../actions/cliente";
+import { fetchAllClientes } from "../../actions/cliente";
 import ItemCliente from "./itemCliente";
 
 class ListaClientes extends Component {
     componentWillMount() {
-        this.props.fetchClientes();
+        this.props.fetchAllClientes();
     }
 
     renderClientes() {
         return lodash.map(this.props.clientes, clientes => {
-            return <ItemCliente key={clientes.id} clientes={clientes} />;
+            return <ItemCliente key={clientes._id} clientes={clientes} />;
         });
     }
 
     render() {
         return (
-            <div className="list-group" style={{ marginBottom: '2rem' }}>
-                {this.renderClientes()}
-
-            </div>
+                <div className="row justify-content-between">
+                    {this.renderClientes()}
+                </div>
         );
     }
 }
@@ -31,5 +30,5 @@ function mapStateToProps(state) {
 
 export default connect(
     mapStateToProps,
-    { fetchClientes }
+    { fetchAllClientes }
 )(ListaClientes);

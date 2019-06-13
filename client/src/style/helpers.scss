@@ -10,5 +10,41 @@ label {
 }
 
 label {
-    padding-top: .5rem;
+    padding-top: 0.5rem;
+}
+
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.form-row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+}
+
+span,
+p {
+    font-family: "Lato", sans-serif;
+}
+
+.btn-success,
+.btn-success:disabled,
+.btn-success:hover {
+    background-color: peru;
+}
+
+.btn-danger,
+.btn-danger:disabled,
+.btn-danger:hover {
+    background-color: firebrick;
 }

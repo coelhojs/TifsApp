@@ -1,17 +1,17 @@
 import * as lodash from "lodash";
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { fetchServicos } from '../../actions/servico';
+import { fetchAllServicos } from '../../actions/servico';
 import CardServico from "./cardServico";
 
 class ListaServicosRecentes extends Component {
     componentWillMount() {
-        this.props.fetchServicos();
+        this.props.fetchAllServicos();
     }
 
     renderServicos() {
         let servicosArray = lodash.map(this.props.servicos, servicos => {
-            return <CardServico key={servicos.id} servicos={servicos} />
+            return <CardServico key={servicos._id} servicos={servicos} />
         });
         // return _.take(servicosArray, 3);
         return lodash.map(servicosArray);
@@ -19,10 +19,8 @@ class ListaServicosRecentes extends Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="row justify-content-between">
-                    {this.renderServicos()}
-                </div>
+            <div className="row justify-content-between">
+                {this.renderServicos()}
             </div>
         );
     }
@@ -34,5 +32,5 @@ function mapStateToProps(state) {
 
 export default connect(
     mapStateToProps,
-    { fetchServicos }
+    { fetchAllServicos }
 )(ListaServicosRecentes);
