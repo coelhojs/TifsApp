@@ -18,7 +18,7 @@ class ClienteForm extends Component {
 		return (
 			<form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
 				<div className="form-header text-center">
-					<h1>Cadastro de Cliente</h1>
+					<h4>Novo Cliente</h4>
 				</div>
 				<div className="row no-gutters">
 					<div className="form-body offset-md-1 col-md-5">

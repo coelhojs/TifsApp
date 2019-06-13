@@ -6,18 +6,15 @@ const ItemCliente = ({ clientes }) => {
     const telefone = clientes.telefone;
     //const cpf = clientes.CPF;
     //const dataNasc = moment(clientes.DataNascimento).format('DD/MM/YYYY');
-    const email = clientes.email;
 
     return (
-        <div className="list-group-item list-group-item-action flex-column align-items-start">
-            <div className="d-flex w-100 justify-content-between">
-                <h5 className="mb-1">{nome}</h5>
-                {/* <small>{dataNasc}</small> */}
+        <div className="col-md-3 text-center">
+            <div key={clientes._id} className="card card-cliente">
+                <h5 className="mb-1">Nome: {nome}</h5>
+                <h5 className="mb-1">Telefone: {telefone}</h5>
             </div>
-            <p className="mb-1">{email}</p>
-            <p className="mb-1">{telefone}</p>
-        </div>
-
+            <br/>
+        </div >
     );
 };
 

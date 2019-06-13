@@ -17,9 +17,10 @@ class ListaClientes extends Component {
 
     render() {
         return (
-            <div className="list-group" style={{ marginBottom: '2rem' }}>
-                {this.renderClientes()}
-
+            <div className="container">
+                <div className="row justify-content-between">
+                    {this.renderClientes()}
+                </div>
             </div>
         );
     }
