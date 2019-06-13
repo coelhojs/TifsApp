@@ -1,3 +1,11 @@
+/*
+ * Este modelo representa os dados pessoais do cabeleireiro.
+ * Não confundir com o usuário. O cabeleireiro, assim como
+ * os clientes, os produtos e os serviços, estão ligados
+ * aos usuários através do token de acesso.
+ * 
+ */
+
 const muv = require('mongoose-unique-validator');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
