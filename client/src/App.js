@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import VisualizarHistorico from "./components/visualizarHistorico";
 import Clientes from "./containers/Clientes";
-import Header from "./containers/Header";
+//import Header from "./containers/Header";
 import Historico from "./containers/Historico";
 import Home from "./containers/Home";
 import Landing from "./containers/Landing";

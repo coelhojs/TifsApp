@@ -16,6 +16,7 @@ a {
 
 a:hover {
     color: rgb(167, 167, 167);
+    text-decoration: unset;
 }
 
 header {
@@ -52,4 +53,9 @@ header {
         margin-bottom: 0.5rem;
         margin-right: 0.5rem;
     }
+}
+
+.table-produtos {
+    background-color: rgba(246, 246, 246, 0.212);
+    color: snow;
 }

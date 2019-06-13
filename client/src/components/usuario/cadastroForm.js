@@ -15,7 +15,7 @@ class CadastroForm extends Component {
   }
 
   render() {
-    const { isToggleOn, handleSubmit, pristine, reset, submitting } = this.props;
+    const { handleSubmit, pristine, reset, submitting } = this.props;
     return (
 
       <form className="cadastro-form container-fluid" onSubmit={handleSubmit(this.onSubmit.bind(this))}>

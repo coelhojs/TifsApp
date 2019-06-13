@@ -25,7 +25,7 @@ const CardServico = ({ servicos }) => {
     }
 
     return (
-        <div className="col-md-3">
+        <div className="col-md-3" key={servicos._id}>
             <div key={servicos._id} className="card card-servico">
                 <div className="card__header card-header">{servicos.nome}</div>
                 <div className="card__body card-body">

@@ -1,5 +1,5 @@
 import { api } from "../actions/index";
-import { FETCH_ALL_USUARIOS } from '../actions/types';
+//import { FETCH_ALL_USUARIOS } from '../actions/types';
 
 export const maxLength = max => value =>
     value && value.length > max ? `O tamanho máximo para este campo é ${max}` : undefined;

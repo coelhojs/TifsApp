@@ -1,6 +1,6 @@
-import { api, responseValidation } from "./index";
+import { api } from "./index";
 import history from '../history';
-import { CREATE_PRODUTO, DELETE_PRODUTO, EDIT_PRODUTO, FETCH_ALL_PRODUTOS, FETCH_PRODUTO } from './types';
+import { CREATE_PRODUTO, EDIT_PRODUTO, FETCH_ALL_PRODUTOS, FETCH_PRODUTO } from './types';
 
 export const createProduto = formValues => async (dispatch, getState) => {
     formValues.token = sessionStorage.getItem('token');
@@ -23,12 +23,12 @@ export const editProduto = (id, formValues) => async dispatch => {
     dispatch({ type: EDIT_PRODUTO, payload: response.data });
 };
 
-export const deleteProdutos = id => async dispatch => {
-    const response = await api.delete(`/Produtos/${id}`);
-    // console.log(response);
-    dispatch({ type: DELETE_PRODUTO, payload: id });
-    history.push('/Produtos');
-};
+// export const deleteProdutos = id => async dispatch => {
+//     const response = await api.delete(`/Produtos/${id}`);
+//     // console.log(response);
+//     dispatch({ type: DELETE_PRODUTO, payload: id });
+//     history.push('/Produtos');
+// };
 
 export const fetchAllProdutos = () => async dispatch => {
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Divider from '../components/divider';
 import HomeButton from '../components/homeButton';
 import SignOut from '../components/signOut';

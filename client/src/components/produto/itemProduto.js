@@ -10,8 +10,7 @@ const ItemProduto = ({ produtos }) => {
     const medida = produtos.medida;
 
     return (
-        <tr>
-            <td>{key}</td>
+        <tr key={key}>
             <td>{categoria}</td>
             <td>{marca}</td>
             <td>{linha}</td>
@@ -19,7 +18,9 @@ const ItemProduto = ({ produtos }) => {
             <td>{conteudo}</td>
             <td>{medida}</td>
             {/* <td><span><a href=""><img src="/img/logo/edit.png" alt="Editar produto" />Editar produto</a></span></td> */}
-            <td> <img src="/img/icon/delete.png" alt="Remover produto" /></td>
+            <td className="text-center">
+                <i className="fas fa-trash-alt"></i>
+            </td>
         </tr>
     );
 };

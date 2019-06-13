@@ -14,7 +14,7 @@ const HomeButton = () => {
     return (
         <div style={style}>
             <Link to="/Home">
-                <i class="fas fa-home fa-2x"></i>
+                <i className="fas fa-home fa-2x"></i>
             </Link>
         </div>
     );

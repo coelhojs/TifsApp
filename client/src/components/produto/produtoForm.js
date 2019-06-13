@@ -14,10 +14,7 @@ class ProdutoForm extends Component {
 
         return (
             <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-                <div className="form-header text-center">
-                    <h1>Novo Produto</h1>
-                </div>
-                <div className="form-body offset-md-3 col-md-6">
+                <div className="form-body col-md-6">
                     <div className="row">
                         <div className="col-md-12">
                             <label>Categoria</label>

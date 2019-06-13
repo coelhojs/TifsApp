@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { createCliente } from '../../actions/cliente';
-import { email, required, minLength8, cpf, letters, number, tooYoung } from "../../validation/validateFormularios";
+import { email, required, minLength8, cpf, letters,  tooYoung } from "../../validation/validateFormularios";
 import { normalizePhone, normalizeCPF } from "../../validation/normalize";
 import renderField from '../helpers/renderField';
 

@@ -50,7 +50,7 @@ const MaterialUtilizado = ({ fields }) => {
                                     </Field>
                                 </div>
                                 <div className="col-2">
-                                    <i class="fas fa-trash-alt" onClick={() => fields.remove(index)} alt="Remover produto"></i>
+                                    <i className="fas fa-trash-alt" onClick={() => fields.remove(index)} alt="Remover produto"></i>
                                 </div>
                             </div>
                         </div>

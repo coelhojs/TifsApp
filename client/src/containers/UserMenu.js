@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { pushRotate as Menu } from "react-burger-menu";
 import { Link } from "react-router-dom";
 
-let history = require("history").createBrowserHistory;
+// let history = require("history").createBrowserHistory;
 
 class UserMenu extends Component {
 

@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { loginUsuario } from '../../actions/usuario';
 // import { required, maxLength, number, minValue, email } from "../validation/validateFormularios";
-import { email, required, minLength8, maxLength15 } from "../../validation/validateFormularios";
+import { email } from "../../validation/validateFormularios";
 import renderField from '../helpers/renderField';
 
-let history = require("history").createBrowserHistory;
+//let history = require("history").createBrowserHistory;
 
 class LoginForm extends Component {
     onSubmit(props) {

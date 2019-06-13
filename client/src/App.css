@@ -201,7 +201,8 @@ a {
   color: snow; }
 
 a:hover {
-  color: #a7a7a7; }
+  color: #a7a7a7;
+  text-decoration: unset; }
 
 header {
   padding-top: 3rem; }
@@ -230,6 +231,10 @@ header {
   height: 2rem;
   margin-bottom: 0.5rem;
   margin-right: 0.5rem; }
+
+.table-produtos {
+  background-color: rgba(246, 246, 246, 0.212);
+  color: snow; }
 
 footer {
   background-color: black;

@@ -14,7 +14,7 @@ const HomeButton = () => {
     return (
         <div style={style}>
             <Link to="/">
-                <i class="fas fa-sign-out-alt fa-2x"></i>
+                <i className="fas fa-sign-out-alt fa-2x"></i>
             </Link>
         </div>
     );
