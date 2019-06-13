@@ -7,7 +7,7 @@ const NOME_MODELO = 'Cliente';
 const schema = new Schema({
     nome: { type: String, required: true, unique: true },
     cpf: { type: String, unique: true },
-    telefone: { type: String, unique: true },
+    telefone: { type: String, unique: false },
     nascimento: { type: Date },
     alergias: { type: Boolean },
     sexo: { type: String },

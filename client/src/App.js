@@ -16,7 +16,6 @@ import Servico from "./containers/Servico";
 import VisualizarHistorico from "./components/visualizarHistorico";
 
 class App extends Component {
-
     render() {
         return (
             <div id="page-wrap">

@@ -41,11 +41,18 @@ class LoginForm extends Component {
                         </div>
                     </div>
                     <br />
-                    <div className="button-group">
-                        <button className="btn btn-link">Esqueceu a senha?</button>
-                        <button type="submit" className="btn btn-success shadow border-dark" disabled={pristine || submitting}>
-                            Entrar
+                    <div className="row">
+                        <div className="col-5">
+
+                        </div>
+                        <div className="col-7">
+                            <div className="button-group">
+                                <button className="btn btn-link"><a href="https://www.google.com/search?ei=JSP4XKTwOI_C5OUPsbSbqA0&q=remedio+para+mem%C3%B3ria&oq=remedio+para+mem%C3%B3ria&gs_l=psy-ab.3..0l3j0i22i30l7.2356.3460..3545...0.0..0.109.716.2j5......0....1..gws-wiz.......0i71j35i39j0i67.KLEAcbzwbw0">Esqueceu a senha?</a></button>
+                                <button type="submit" className="btn btn-success shadow border-dark" disabled={pristine || submitting}>
+                                    Entrar
                             </button>
+                            </div>
+                        </div>
                     </div>
                 </form >
             </div>

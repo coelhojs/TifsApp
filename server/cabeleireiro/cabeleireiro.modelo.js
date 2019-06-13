@@ -6,7 +6,7 @@ const NOME_MODELO = 'Cabeleireiro';
 
 const schema = new Schema({
     nome: { type: String, required: true },
-    telefone: { type: String, unique: true },
+    telefone: { type: String, unique: false },
     cnpj: { type: String, unique: true },
     dataNascimento: { type: Date },
     token: { type: Schema.Types.ObjectId, required: true }
